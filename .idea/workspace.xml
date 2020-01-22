@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="817be006-627c-4596-8542-6d65222df06c" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="817be006-627c-4596-8542-6d65222df06c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> 0869362c4729f6556443b5e42db91c806cd7e702
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,6 +125,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
@@ -150,10 +159,14 @@
       <updated>1579601741877</updated>
       <workItem from="1579601743204" duration="8000" />
       <workItem from="1579601763600" duration="1973000" />
+<<<<<<< HEAD
       <workItem from="1579620952318" duration="1704000" />
       <workItem from="1579674468934" duration="326000" />
       <workItem from="1579674810440" duration="179000" />
       <workItem from="1579675094237" duration="201000" />
+=======
+      <workItem from="1579620952318" duration="1231000" />
+>>>>>>> 0869362c4729f6556443b5e42db91c806cd7e702
     </task>
     <servers />
   </component>
@@ -162,5 +175,22 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="378" y="88" key="#phpunit.xml" timestamp="1579674812873">
+      <screen x="0" y="23" width="1440" height="808" />
+    </state>
+    <state x="378" y="88" key="#phpunit.xml/0.23.1440.808@0.23.1440.808" timestamp="1579674812873" />
+    <state x="314" y="29" key="CommitChangelistDialog2" timestamp="1579674781931">
+      <screen x="0" y="23" width="1440" height="808" />
+    </state>
+    <state x="314" y="29" key="CommitChangelistDialog2/0.23.1440.808@0.23.1440.808" timestamp="1579674781931" />
+    <state x="509" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579674832133">
+      <screen x="0" y="23" width="1440" height="808" />
+    </state>
+    <state x="509" y="351" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.808@0.23.1440.808" timestamp="1579674832133" />
   </component>
 </project>
