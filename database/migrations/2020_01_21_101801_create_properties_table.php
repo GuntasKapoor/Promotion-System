@@ -15,10 +15,10 @@ class CreatePropertiesTable extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->bigIncrements('p_id');
-//            $table->timestamps();
             $table->string('p_name');
             $table->string('p_location');
             $table->integer('p_price');
+            $table->timestamps();
         });
     }
 

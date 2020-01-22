@@ -15,7 +15,6 @@ class CreateCouponsTable extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             $table->bigIncrements('c_id');
-//            $table->timestamps();
             $table->string('c_name');
             $table->integer('c_minPrice');
             $table->integer('c_percentDiscount');
@@ -23,6 +22,7 @@ class CreateCouponsTable extends Migration
             $table->integer('c_maxDiscount');
             $table->string('c_cashbackType');
             $table->string('c_paymentMethod');
+            $table->timestamps();
         });
     }
 

@@ -20,11 +20,13 @@ class PropertiesTableSeeder extends Seeder
             'p_location' => 'Punjab',
             'p_price' => 100
         ]);
+
         Properties::create([
             'p_name' => 'Vatsal',
             'p_location' => 'Banglore',
             'p_price' => 200
         ]);
+
         Properties::create([
             'p_name' => 'Charvi',
             'p_location' => 'Rajasthan',
