@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/CouponCreate/submit1', 'AppController@submit1');
+
+Route::resource('/', 'samarth');
