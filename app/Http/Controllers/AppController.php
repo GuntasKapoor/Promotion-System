@@ -14,6 +14,15 @@ class AppController extends Controller
         return view('CouponCreate');
     }
 
+    public function compare(){
+        //$data=$request->input();
+//        return view('CouponCreate');
+
+        $model = coupons::where('c_id', 44)->first();
+        print_r($model);
+
+    }
+
     public function submit1(Request $req){
         //$data=$request->input();
 //        return view('home');

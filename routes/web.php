@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/CouponCreate', 'AppController@CouponCreate');
 
+Route::get('/ll', 'AppController@Compare');
