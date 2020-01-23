@@ -19,4 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/CouponCreate/submit1', 'AppController@submit1');
 
+Route::get('/ll', 'AppController@Compare');
+
 Route::resource('/', 'samarth');

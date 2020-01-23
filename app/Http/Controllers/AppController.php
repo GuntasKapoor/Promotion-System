@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 use App\couponProperty;
 use App\coupons;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Properties;
+use App\couponuser;
 
 class AppController extends Controller
 {
@@ -18,8 +21,66 @@ class AppController extends Controller
         //$data=$request->input();
 //        return view('CouponCreate');
 
-        $model = coupons::where('c_id', 44)->first();
-        print_r($model);
+//        $model = properties::where('p_id',1)->get();
+//        print_r($model);
+//        $cc=$r->input('c');
+//        $pp=$r->input('p');
+//        $uu=$r->input('u');
+        $coupon=coupons::where('c_id',5)->count();
+        if(!$coupon){
+            $response = ['valid' => false, 'message' => 'Coupon code not recognised'];
+        }
+        else{
+            $coupon=coupons::where('c_id',5)
+                ->where('c_validity','>=',Carbon::now())
+                ->where('c_activate',1)->count();
+            if(!$coupon){
+                $response = ['valid' => false, 'message' => 'Coupon code has expired'];
+            }
+            else{
+                $zz=couponProperty::where('c_id',5)
+                    ->where('p_id',1)->count();
+                if(!$zz){
+                    $response = ['valid' => false, 'message' => 'Coupon not applicable on this property'];
+                }
+                else{
+                    $zz=couponuser::where('c_id',5)
+                        ->where('u_id',6)->count();
+                    if($zz){
+                        $response = ['valid' => false, 'message' => 'You have already used this coupon'];
+                    }
+                    else{
+                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.'];
+                        $id = DB::table('couponusers')->insertGetId(
+                            ['c_id' => 5, 'u_id' => 6]
+                        );
+                    }
+
+
+                }
+            }
+        }
+
+
+//        $coupon = coupons::where('c_id',5)
+//            ->where('c_validity','>=',Carbon::now())
+//            ->where('c_activate',1)->count();
+//        if (!$coupon) {
+//            $response = ['valid' => false, 'message' => 'Coupon code not recognised'];
+//        }  else {
+//            $zz=couponProperty::where('c_id',5)
+//                    ->where('p_id',99)->count();
+//            if(!$zz){
+//                $response = ['valid' => false, 'message' => 'Coupon not applicable on this property'];
+//            }
+//            else{
+//                $response = ['valid' => true, 'message' => 'Coupon applied successfully!.'];
+//            }
+//        }
+//        print_r($response);
+        return json_encode($response);
+//
+//        print_r($coupon);
 
     }
 
