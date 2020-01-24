@@ -15,7 +15,7 @@
         <div id="app">
 
             <div class="container">
-                <createcoupon></createcoupon>
+                <front></front>
             </div>
         </div>
 

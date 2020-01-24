@@ -95,7 +95,7 @@ class AppController extends Controller
 //        $c->c_activate=true;
 //        $c->save();
 
-        $id = DB::table('coupons')->insertGetId(
+         (
             ['c_name' => $req->input('c-name'), 'c_percentDiscount' => $req->input('c-percent'),
                 'c_validity' => $req->input('c-validity'), 'c_maxDiscount' => $req->input('c-maxdiscount'),
                 'c_activate' => true]

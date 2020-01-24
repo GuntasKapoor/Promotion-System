@@ -1,26 +1,24 @@
 <template>
-    <!-- Material form register -->
-    <form>
-        <p class="h4 text-center mb-4">Sign up</p>
-        <div class="grey-text">
-            <mdb-input label="Your name" icon="user" type="text"/>
-            <mdb-input label="Your email" icon="envelope" type="email"/>
-            <mdb-input label="Confirm your email" icon="exclamation-triangle" type="text"/>
-            <mdb-input label="Your password" icon="lock" type="password"/>
-        </div>
-        <div class="text-center">
-            <mdb-btn color="primary">Register</mdb-btn>
-        </div>
+<!--    <h2>efrfr</h2>-->
+<!--    <div>-->
+<!--        <h2>jgdjwd</h2>-->
+<!--    </div>-->
+<!--    <h1 align="center">Create Coupon</h1>-->
+
+    <form method="post" action="/api/CouponCreate/submit1">
+        <h4 align="center"> Coupon Code: <input name="c-name" type="text" required></h4>
+        <h4 align="center"> Percentage Discount: <input name="c-percent" type="number" required></h4>
+        <h4 align="center"> Coupon Validity: <input name="c-validity" type="date" required></h4>
+        <h4 align="center"> Max Discount: <input name="c-maxdiscount" type="number" required></h4>
+        <h4 align="center"> select properties</br>
+            <input type="checkbox" name="c_property[]" value=1> property1<br>
+            <input type="checkbox" name="c_property[]" value=2 > property2<br>
+            <input type="checkbox" name="c_property[]" value=3> property3<br>
+            <input type="checkbox" name="c_property[]" value=4 > property4<br>
+            <input type="checkbox" name="c_property[]" value=5> property5<br>
+            <input type="checkbox" name="c_property[]" value=6 > property6<br>
+        </h4>
+            <h4 align="center"><input type="submit" align="center"></h4>
     </form>
-    <!-- Material form register -->
 </template>
-<script>
-    import { mdbInput, mdbBtn } from 'mdbvue';
-    export default {
-        name: 'Basic',
-        components: {
-            mdbInput,
-            mdbBtn
-        }
-    }
-</script>
+

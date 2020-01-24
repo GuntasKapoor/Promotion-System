@@ -3,8 +3,8 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'mdbvue/build/css/mdb.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'mdbvue/build/css/mdb.css';
 require('./bootstrap');
 
 window.Vue = require('vue');
