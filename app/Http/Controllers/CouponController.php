@@ -24,12 +24,12 @@ class CouponController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $c_id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($c_id)
     {
-        $coupon = Coupon::findOrFail($id);
+        $coupon = Coupon::findOrFail($c_id);
 
         if($coupon->delete()) {
             return new CouponResource($coupon);
