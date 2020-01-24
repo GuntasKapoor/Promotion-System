@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h2>front</h2>
+        <h2>frofgdfgnt</h2>
     </div>
 </template>

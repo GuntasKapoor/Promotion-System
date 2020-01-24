@@ -3,7 +3,8 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdbvue/build/css/mdb.css';
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -21,6 +22,8 @@ window.Vue = require('vue');
 
 Vue.component('front',
     require('./components/front.vue').default);
+Vue.component('couponcreate',
+    require('./components/couponcreate.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

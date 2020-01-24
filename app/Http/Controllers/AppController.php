@@ -17,42 +17,40 @@ class AppController extends Controller
         return view('CouponCreate');
     }
 
-    public function compare(){
+    public function compare( Request $r) {
         //$data=$request->input();
 //        return view('CouponCreate');
 
 //        $model = properties::where('p_id',1)->get();
 //        print_r($model);
-//        $cc=$r->input('c');
-//        $pp=$r->input('p');
-//        $uu=$r->input('u');
-        $coupon=coupons::where('c_id',5)->count();
+        $cc=$r->input('c');
+        $pp=$r->input('p');
+        $uu=$r->input('u');
+        $coupon=coupons::where('c_id',$cc)->count();
         if(!$coupon){
             $response = ['valid' => false, 'message' => 'Coupon code not recognised'];
         }
         else{
-            $coupon=coupons::where('c_id',5)
+            $coupon=coupons::where('c_id',$cc)
                 ->where('c_validity','>=',Carbon::now())
                 ->where('c_activate',1)->count();
             if(!$coupon){
                 $response = ['valid' => false, 'message' => 'Coupon code has expired'];
             }
-            else{
-                $zz=couponProperty::where('c_id',5)
-                    ->where('p_id',1)->count();
-                if(!$zz){
+            else {
+                $zz = couponProperty::where('c_id', $cc)
+                    ->where('p_id', $pp)->count();
+                if (!$zz) {
                     $response = ['valid' => false, 'message' => 'Coupon not applicable on this property'];
-                }
-                else{
-                    $zz=couponuser::where('c_id',5)
-                        ->where('u_id',6)->count();
-                    if($zz){
+                } else {
+                    $zz = couponuser::where('c_id', $cc)
+                        ->where('u_id', $uu)->count();
+                    if ($zz) {
                         $response = ['valid' => false, 'message' => 'You have already used this coupon'];
-                    }
-                    else{
+                    } else {
                         $response = ['valid' => true, 'message' => 'Coupon applied successfully!.'];
                         $id = DB::table('couponusers')->insertGetId(
-                            ['c_id' => 5, 'u_id' => 6]
+                            ['c_id' => $cc, 'u_id' => $uu]
                         );
                     }
 
@@ -60,7 +58,7 @@ class AppController extends Controller
                 }
             }
         }
-
+        return ($response);
 
 //        $coupon = coupons::where('c_id',5)
 //            ->where('c_validity','>=',Carbon::now())
@@ -78,7 +76,7 @@ class AppController extends Controller
 //            }
 //        }
 //        print_r($response);
-        return json_encode($response);
+
 //
 //        print_r($coupon);
 
@@ -124,7 +122,7 @@ class AppController extends Controller
 //        print_r($mm);
 //        $xx=$mm[0][[MAX(c_id)] ];
 //        print_r($xx);
-        $mm = DB::getPdo()->lastInsertId();
+//        $mm = DB::getPdo()->lastInsertId();
         $p=$req->input('c_property');
 //        print_r($req->input('c_property'));
         $data=array();
@@ -148,4 +146,24 @@ class AppController extends Controller
 //        'c-maxdiscount'=>$req['c_maxDiscount']
 //        ]);
     }
+
+    public function update(Request $request)
+    {
+//        $request->validate([
+//            'coinname' => 'required',
+//            'coinprice'=> 'required|numeric',
+//        ]);
+        $id=$request->input('c_id');
+        $c = coupons::find($id);
+        $c->c_name=$request->get('c_name');
+        $c->c_percentDiscount=$request->get('c_percent');
+//        $checkbox = implode(",", $request->get('option'));
+        $c->c_validity=$request->get('c_validity');
+        $c->c_maxDiscount=$request->get('c_max');
+        $c->c_activate = $request->get('c_activate');
+        $c->save();
+        return redirect('dff');
+    }
+
+
 }

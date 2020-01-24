@@ -12,11 +12,10 @@
 
     </head>
     <body>
-
         <div id="app">
 
             <div class="container">
-                <front></front>
+                <createcoupon></createcoupon>
             </div>
         </div>
 
