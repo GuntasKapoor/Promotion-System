@@ -12,9 +12,18 @@
 
     </head>
     <body>
+
+
+{{--    @if(session()->has('success'))--}}
+{{--        <div class="alert alert-success">--}}
+{{--            {{ session()->get('success') }}--}}
+{{--        </div>--}}
+{{--    @endif--}}
+{{--    ghgj--}}
         <div id="app">
 
             <div class="container">
+                <flash message=""></flash>
                 <front></front>
             </div>
         </div>

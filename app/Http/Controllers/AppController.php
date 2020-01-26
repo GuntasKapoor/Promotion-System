@@ -9,14 +9,19 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Properties;
 use App\couponuser;
+use Illuminate\Support\Facades\Session;
+use phpDocumentor\Reflection\DocBlock\Tags\Property;
 
 class AppController extends Controller
 {
     public function CouponCreate(){
         //$data=$request->input();
-        return view('CouponCreate');
+        return view('create/CouponCreate');
     }
-
+    public function validateinput(){
+        //$data=$request->input();
+        return view('validate/validityEntries');
+    }
     public function compare( Request $r) {
         //$data=$request->input();
 //        return view('CouponCreate');
@@ -52,13 +57,23 @@ class AppController extends Controller
                         $id = DB::table('couponusers')->insertGetId(
                             ['c_id' => $cc, 'u_id' => $uu]
                         );
+
+                        $coupon=coupons::where('c_id',$cc)->first();
+                        $prop=properties::where('p_id',$pp)->first();
+//                        print_r($coupon);
+                        $dis=(($coupon->c_percentDiscount)/100)*($prop->p_price);
+                        if($dis>$coupon->c_maxDiscount){
+                            $dis=$coupon->c_maxDiscount;
+                        }
+                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.' , 'discount' => $dis];
+
                     }
 
 
                 }
             }
         }
-        return ($response);
+        return view('validate/validateresult')->with(json_encode($response));
 
 //        $coupon = coupons::where('c_id',5)
 //            ->where('c_validity','>=',Carbon::now())
@@ -83,48 +98,15 @@ class AppController extends Controller
     }
 
     public function submit1(Request $req){
-        //$data=$request->input();
-//        return view('home');
-//        $c=new coupons();
-////        print_r($req->input());
-////        print_r($req->input('c-name'));
-//        $c->c_name=$req->input('c-name');
-//        $c->c_percentDiscount=$req->input('c-percent');
-//        $c->c_validity=$req->input('c-validity');
-//        $c->c_maxDiscount=$req->input('c-maxdiscount');
-//        $c->c_activate=true;
-//        $c->save();
 
-         (
+        $id = DB::table('coupons')->insertGetId(
             ['c_name' => $req->input('c-name'), 'c_percentDiscount' => $req->input('c-percent'),
                 'c_validity' => $req->input('c-validity'), 'c_maxDiscount' => $req->input('c-maxdiscount'),
                 'c_activate' => true]
         );
-        print_r($id);
-//        $books=$request->books;
-//        $data = array();
-//        foreach($books as $book)
-//        {
-//            if(!empty($book))
-//            {
-//                $data[] =[
-//                    'name' => $book,
-//                    'user_id' => Auth::id(),
-//                ];
-//
-//            }}
-//        Book::insert($data);
-//        print_r($c);
-//        $mm=$c->c_id;
-//        print_r($mm);
-//        $mm=DB::select('SELECT MAX(c_id) FROM coupons');
-//        //$mm=$mm+1;
-//        print_r($mm);
-//        $xx=$mm[0][[MAX(c_id)] ];
-//        print_r($xx);
-//        $mm = DB::getPdo()->lastInsertId();
+
         $p=$req->input('c_property');
-//        print_r($req->input('c_property'));
+        print_r($req->input('c_property'));
         $data=array();
         foreach($p as $pp){
             if(!empty($pp)){
@@ -135,25 +117,19 @@ class AppController extends Controller
             }
         }
         couponProperty::insert($data);
-
-
-
-//        return view('CouponCreate');
-//        auth()->user()->coupons()->create([
-//            'c-name'=>$req['c_name'],
-//        'c-percent'=>$req['c_percentDiscount'],
-//        'c-validity'=>$req['c_validity'],
-//        'c-maxdiscount'=>$req['c_maxDiscount']
-//        ]);
+        print_r('Coupon has been created');
+        Session::flash('Success','Coupon created successfully');
+        return redirect('/')->withSuccess('Created');;
+//
     }
 
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
 //        $request->validate([
 //            'coinname' => 'required',
 //            'coinprice'=> 'required|numeric',
 //        ]);
-        $id=$request->input('c_id');
+//        $id=$request->input('c_id');
         $c = coupons::find($id);
         $c->c_name=$request->get('c_name');
         $c->c_percentDiscount=$request->get('c_percent');
@@ -162,7 +138,36 @@ class AppController extends Controller
         $c->c_maxDiscount=$request->get('c_max');
         $c->c_activate = $request->get('c_activate');
         $c->save();
-        return redirect('dff');
+        return redirect('/')->with('success','Coupon has been updated');
+    }
+
+
+    public function showdetails(Request $request){
+
+//        print_r($request->input('c_id'));
+
+//        $showthiscoupon = DB::select("select * from coupons where c_id = $request->input('c_id')");
+        // Properties::query(w);
+        $showthiscoupon = json_encode(coupons::where('c_id', $request->input('c_id'))->get());
+//        print_r($showthiscoupon);
+
+        if($showthiscoupon == null)
+            echo 'null coupon';
+//        else
+//            print_r($showthiscoupon);
+        //return view('couponDetailsView')->withshowDetails((array)$showthiscoupon);
+        return $showthiscoupon;
+    }
+
+
+
+    public function showallcoupons(){
+
+        $showcoupons = coupons::all()->toArray();
+        // Properties::query(w);
+
+
+        return json_encode($showcoupons);
     }
 
 

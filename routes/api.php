@@ -19,7 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/CouponCreate/submit1', 'AppController@submit1');
 
-Route::post('/couponvalidate', 'AppController@Compare');
+//Route::post('/couponvalidate', 'AppController@Compare');
+
+Route::post('/showdetails', 'AppController@showdetails');
+
+Route::post('/couponvalidate/result', 'AppController@compare');
 
 
 

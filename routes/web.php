@@ -21,5 +21,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/CouponCreate', 'AppController@CouponCreate');
 
-Route::get('/couponvalidate', 'AppController@Compare');
+//Route::get('/validate/result', 'AppController@Compare');
+
+Route::get('/showcoupons', 'AppController@showallcoupons');
+
+Route::get('/validate', 'AppController@validateinput');
+
+
+
 
