@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class coupons extends Model
 {
-    //
+
+    protected $primaryKey = 'c_id';
     protected $fillable = ['c_name',
         'c_minPrice',
         'c_percentDiscount',

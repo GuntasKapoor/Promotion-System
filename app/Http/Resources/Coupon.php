@@ -2,6 +2,8 @@
 
 namespace App\Http\Resources;
 
+header("Access-Control-Allow-Origin: *");
+
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Coupon extends JsonResource
