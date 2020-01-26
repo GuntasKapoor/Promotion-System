@@ -71,7 +71,7 @@
             let url = "http://127.0.0.1:8001/api/fetchcoupondetails";
             const { params } = this.$route;
 
-            axios.post(url, { params }).then(response => {
+            axios.get(url, { params }).then(response => {
                 console.log(response.data);
                 this.results = response.data;
             })

@@ -51,7 +51,7 @@
         },
 
         mounted(){
-            let url = "api/showcoupons";
+            let url = "http://127.0.0.1:8001/api/showcoupons";
             axios.get(url).then(response => {
                 console.log(response.data);
                 this.results = response.data;

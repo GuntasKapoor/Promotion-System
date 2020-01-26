@@ -13,6 +13,21 @@ use Illuminate\Http\Request;
 |
 */
 
+Auth::routes();
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/', function () {
+    return view('landing');
+});
+
+Route::get('/showallproperties','propertiesController@showProperties');
+
+Route::get('/showcoupons','CouponsController@showallcoupons');
+
+Route::get('/fetchcoupondetails','CouponsController@showdetails');
+
+

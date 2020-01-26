@@ -2013,7 +2013,7 @@ __webpack_require__.r(__webpack_exports__);
 
     var url = "http://127.0.0.1:8001/api/fetchcoupondetails";
     var params = this.$route.params;
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, {
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url, {
       params: params
     }).then(function (response) {
       console.log(response.data);
@@ -2087,7 +2087,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    var url = "api/showcoupons";
+    var url = "http://127.0.0.1:8001/api/showcoupons";
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
       console.log(response.data);
       _this.results = response.data;

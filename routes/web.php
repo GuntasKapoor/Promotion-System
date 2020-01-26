@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('landing');
+//});
+
+//Route::get('/api/showcoupondetail/{id}','ShowCouponDetailsController@showdetails');
+
+
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/fetchcoupondetails/{c_id}','showCouponDetailsController@showdetails');
