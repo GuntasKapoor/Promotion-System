@@ -111,6 +111,15 @@ const app = new Vue({
     router,
 });
 */
+const routes = [
+    {
+        name: 'delete',
+        path: '/coupons',
+        component: App
+    }
+];
+
+const router = new VueRouter({ mode: 'history', routes: routes});
 
 new Vue({
     render: h => h(App),

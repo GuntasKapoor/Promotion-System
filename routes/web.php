@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+//Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,6 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/{any}', function () {
+Route::get('/deletecoupon', function () {
     return view('post');
 })->where('any', '.*');
