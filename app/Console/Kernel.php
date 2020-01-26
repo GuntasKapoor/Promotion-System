@@ -2,8 +2,6 @@
 
 namespace App\Console;
 
-header("Access-Control-Allow-Origin: DELETE");
-
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 

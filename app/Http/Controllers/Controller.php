@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-header("Access-Control-Allow-Origin: http://localhost");
+header("Access-Control-Allow-Origin: http://localhost:8080");
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
