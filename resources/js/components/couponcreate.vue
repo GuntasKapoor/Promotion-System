@@ -47,7 +47,7 @@
     //     },
     //
     //     mounted(){
-    //         let url = "http://127.0.0.1:8001/CouponCreate";
+    //         let url = "/CouponCreate";
     //         const { params } = this.$route;
     //
     //         axios.get(url, { }).then(response => {

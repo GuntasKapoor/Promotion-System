@@ -30,8 +30,10 @@ Route::get('/showcoupons','CouponsController@showallcoupons');
 
 Route::get('/fetchcoupondetails','CouponsController@showdetails');
 
+//Route::post('/editCouponDetails/{c_id}', 'CouponsController@editCouponDetails');
 
 
+Route::post('/editted', 'CouponsController@editCouponDetails');
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();

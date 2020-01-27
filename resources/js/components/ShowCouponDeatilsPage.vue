@@ -48,7 +48,7 @@
 
 <script>
     import axios from 'axios'
-    export default {
+    export default  {
         data(){
             return {
                 data: null,
@@ -68,7 +68,7 @@
         },
 
         mounted(){
-            let url = "http://127.0.0.1:8001/api/fetchcoupondetails";
+            let url = "/api/fetchcoupondetails";
             const { params } = this.$route;
 
             axios.get(url, { params }).then(response => {

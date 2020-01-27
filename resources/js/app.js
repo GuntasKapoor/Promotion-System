@@ -8,6 +8,8 @@ import ShowCouponsPage from "./components/ShowCouponsPage";
 import CouponCreate from "./components/couponcreate";
 import validateEntries from "./components/validateEntries";
 import validateresult from "./components/validateresult";
+import EditCouponDetailsPage from "./components/EditCouponDetailsPage";
+
 
 //import App from
 Vue.use(VueRouter);
@@ -31,6 +33,12 @@ const router = new VueRouter({
             path: '/api/showcoupondetails/:c_id',
             name: 'showcoupondetail',
             component: ShowCouponDeatilsPage
+        },
+
+        {
+            path: '/api/editCouponDetails/:c_id',
+            name: 'editCoupon',
+            component: EditCouponDetailsPage
         },
 
         {
@@ -77,5 +85,4 @@ const app = new Vue({
 });
 
 console.log('App: ', app);
-
 
