@@ -5,9 +5,21 @@
             <p> <h1>Validity</h1></p>
         </div>
 
-        <h4>{{results.valid}}</h4>
-        <h1>hello</h1>
-        <div v-if="{{results.valid}}===true"></div>
+<!--        <h4>{{results.valid}}</h4>-->
+<!--        val={{results.valid}};-->
+<!--        <h1></h1>-->
+        <div v-if="results.valid">
+
+            <div style="color: red">
+                <p> <h1>Congrat</h1></p>
+            </div>
+
+            <h2>{{results.message}}</h2>
+
+        </div>
+        <div v-else>
+            <h2>{{results.message}}</h2>
+        </div>
 
 <!--        <table class="table table-hover">-->
 <!--            <thead>-->
@@ -42,18 +54,14 @@
                 data: null,
 
                 results: [],
-                out:{
-                    valid:'',
-                    message:'',
-                    price:''
-                }
+
             }
         },
 
         mounted(){
             let url = "/api/couponvalidate/result";
             const { params } = this.$route;
-
+            console.log(params)
             axios.get(url, { params }).then(response => {
                 console.log(response.data);
                 this.results = response.data;

@@ -46,7 +46,7 @@ const router = new VueRouter({
 
 
         {
-            path: '/api/couponvalidate/result:valid:message:price',
+            path: '/api/couponvalidate/result/:c:p:u',
             name: 'validateresult',
             component: validateresult
         }
@@ -54,7 +54,8 @@ const router = new VueRouter({
 
     ],
 });
-
+// Vue.component('validateresult',
+//     require('./components/validateresult.vue').default);
 //Vue.component('Welcome', require('./components/Welcome.vue') )
 
 const app = new Vue({

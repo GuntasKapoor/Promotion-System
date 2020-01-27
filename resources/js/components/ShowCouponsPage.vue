@@ -44,8 +44,8 @@
                     c_percentDiscount: '',
                     c_validity: '',
                     c_maxDiscount: '',
-                    // c_cashbackType: '',
-                    // c_paymentMethod: ''
+                    c_cashbackType: '',
+                    c_paymentMethod: ''
                 }
             }
         },

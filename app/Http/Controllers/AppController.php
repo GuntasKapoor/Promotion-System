@@ -34,29 +34,38 @@ class AppController extends Controller
         $cc=$r->input('c');
         $pp=$r->input('p');
         $uu=$r->input('u');
+        $prop=properties::where('p_id',$pp)->first();
+//        $prop = DB::table('properties')->select('p_price')->where('p_id', $pp)->g();
+//        $pr=properties::find($pp)->first();
+//        $prop=$prop->p_price;
+//        $prop->p_price;
+        $prop=$prop->p_price;
         $coupon=coupons::where('c_id',$cc)->count();
+
         if(!$coupon){
-            $response = ['valid' => false, 'message' => 'Coupon code not recognised'];
+
+            $response = ['valid' => false, 'message' => 'Coupon code not recognised', 'price'=>$prop];
         }
         else{
+
             $coupon=coupons::where('c_id',$cc)
             ->where('c_validity','>=',Carbon::now())
             ->where('c_activate',1)->count();
             if(!$coupon){
-                $response = ['valid' => false, 'message' => 'Coupon code has expired'];
+                $response = ['valid' => false, 'message' => 'Coupon code has expired', 'price'=>$prop];
             }
             else {
                 $zz = couponProperty::where('c_id', $cc)
                 ->where('p_id', $pp)->count();
                 if (!$zz) {
-                $response = ['valid' => false, 'message' => 'Coupon not applicable on this property'];
+                $response = ['valid' => false, 'message' => 'Coupon not applicable on this property', 'price'=>$prop];
                 } else {
                     $zz = couponuser::where('c_id', $cc)
                     ->where('u_id', $uu)->count();
                     if ($zz) {
-                        $response = ['valid' => false, 'message' => 'You have already used this coupon'];
+                        $response = ['valid' => false, 'message' => 'You have already used this coupon', 'price'=>$prop];
                     } else {
-                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.'];
+                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.', 'price'=>$prop];
                         $id = DB::table('couponusers')->insertGetId(
                         ['c_id' => $cc, 'u_id' => $uu]
                         );
@@ -69,7 +78,7 @@ class AppController extends Controller
                             $dis=$coupon->c_maxDiscount;
                         }
                         $pr=$prop->p_price-$dis;
-                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.' , 'price' => $pr];
+                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.', 'price'=>$prop ];
 
                     }
 
