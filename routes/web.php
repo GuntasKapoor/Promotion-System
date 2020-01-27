@@ -13,13 +13,13 @@
 
 //Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
 
-Route::get('/', function () {
+/*Route::get('/home', function () {
     return view('welcome');
-});
+})->where('any', '.*');*/
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/deletecoupon', function () {
     return view('post');

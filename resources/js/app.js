@@ -73,7 +73,7 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
 import App from '../views/App.vue'
-import navbar from '../js/components/Navbar.vue'
+import welcome from '../views/welcome.vue'
 /*
 import Welcome from '../views/welcome.vue'
 import navbar from '../js/components/Navbar.vue'
@@ -112,11 +112,16 @@ const app = new Vue({
 });
 */
 const routes = [
-    {
+    /*{
         name: 'delete',
         path: '/coupons',
         component: App
-    }
+    },
+    {
+        name: 'random',
+        path: '/home',
+        component: welcome
+    }*/
 ];
 
 const router = new VueRouter({ mode: 'history', routes: routes});
@@ -124,3 +129,8 @@ const router = new VueRouter({ mode: 'history', routes: routes});
 new Vue({
     render: h => h(App),
 }).$mount('#app')
+
+/*new Vue({
+    render: h => h(welcome),
+}).$mount('#app2')
+*/
