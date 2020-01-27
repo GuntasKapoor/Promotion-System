@@ -5,6 +5,7 @@ import Vuex from 'vuex';
 import App from './components/App.vue';
 import ShowCouponDeatilsPage from "./components/ShowCouponDeatilsPage.vue";
 import ShowCouponsPage from "./components/ShowCouponsPage";
+import CouponCreate from "./components/couponcreate";
 //import App from
 Vue.use(VueRouter);
 Vue.use(Vuex);
@@ -27,7 +28,15 @@ const router = new VueRouter({
             path: '/api/showcoupondetails/:c_id',
             name: 'showcoupondetail',
             component: ShowCouponDeatilsPage
+        },
+
+        {
+            path: '/CouponCreate',
+            name: 'couponcreate',
+            component: CouponCreate
         }
+
+
     ],
 });
 

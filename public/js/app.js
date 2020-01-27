@@ -2113,6 +2113,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/couponcreate.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/couponcreate.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// import axios from 'axios'
+// export default {
+//     data(){
+//         return {
+//             data: null,
+//
+//             results: [],
+//             coupon:{
+//                 c_id: '',
+//                 c_name: '',
+//                 c_minPrice: '',
+//                 c_percentDiscount: '',
+//                 c_validity: '',
+//                 c_maxDiscount: '',
+//                 c_cashbackType: '',
+//                 c_paymentMethod: ''
+//             }
+//         }
+//     },
+//
+//     mounted(){
+//         let url = "http://127.0.0.1:8001/CouponCreate";
+//         const { params } = this.$route;
+//
+//         axios.get(url, { }).then(response => {
+//             console.log(response.data);
+//             this.results = response.data;
+//         })
+//     },
+//
+//
+// }
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -38331,6 +38400,132 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/couponcreate.vue?vue&type=template&id=042b536d&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/couponcreate.vue?vue&type=template&id=042b536d& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticStyle: { background: "#ECECEC", padding: "30px" } },
+      [
+        _c("div", { staticStyle: { color: "red" } }, [
+          _c("p"),
+          _c("h1", { attrs: { align: "center" } }, [_vm._v("Create Coupon")]),
+          _c("p")
+        ]),
+        _vm._v(" "),
+        _c(
+          "form",
+          { attrs: { method: "post", action: "/api/CouponCreate/submit1" } },
+          [
+            _c("h4", { attrs: { align: "center" } }, [
+              _vm._v(" Coupon Code: "),
+              _c("input", {
+                attrs: { name: "c-name", type: "text", required: "" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("h4", { attrs: { align: "center" } }, [
+              _vm._v(" Percentage Discount: "),
+              _c("input", {
+                attrs: { name: "c-percent", type: "number", required: "" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("h4", { attrs: { align: "center" } }, [
+              _vm._v(" Coupon Validity: "),
+              _c("input", {
+                attrs: { name: "c-validity", type: "date", required: "" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("h4", { attrs: { align: "center" } }, [
+              _vm._v(" Max Discount: "),
+              _c("input", {
+                attrs: { name: "c-maxdiscount", type: "number", required: "" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("h4", { attrs: { align: "center" } }, [
+              _vm._v(" select properties"),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "checkbox", name: "c_property[]", value: "1" }
+              }),
+              _vm._v(" property1"),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "checkbox", name: "c_property[]", value: "2" }
+              }),
+              _vm._v(" property2"),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "checkbox", name: "c_property[]", value: "3" }
+              }),
+              _vm._v(" property3"),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "checkbox", name: "c_property[]", value: "4" }
+              }),
+              _vm._v(" property4"),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "checkbox", name: "c_property[]", value: "5" }
+              }),
+              _vm._v(" property5"),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "checkbox", name: "c_property[]", value: "6" }
+              }),
+              _vm._v(" property6"),
+              _c("br")
+            ]),
+            _vm._v(" "),
+            _c("h4", { attrs: { align: "center" } }, [
+              _c("input", {
+                attrs: {
+                  type: "submit",
+                  align: "center",
+                  onclick: "alert('Coupon created successfully')"
+                }
+              })
+            ])
+          ]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js":
 /*!********************************************************************!*\
   !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
@@ -54501,7 +54696,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_App_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/App.vue */ "./resources/js/components/App.vue");
 /* harmony import */ var _components_ShowCouponDeatilsPage_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ShowCouponDeatilsPage.vue */ "./resources/js/components/ShowCouponDeatilsPage.vue");
 /* harmony import */ var _components_ShowCouponsPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ShowCouponsPage */ "./resources/js/components/ShowCouponsPage.vue");
+/* harmony import */ var _components_couponcreate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/couponcreate */ "./resources/js/components/couponcreate.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -54527,6 +54724,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     path: '/api/showcoupondetails/:c_id',
     name: 'showcoupondetail',
     component: _components_ShowCouponDeatilsPage_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, {
+    path: '/CouponCreate',
+    name: 'couponcreate',
+    component: _components_couponcreate__WEBPACK_IMPORTED_MODULE_6__["default"]
   }]
 }); //Vue.component('Welcome', require('./components/Welcome.vue') )
 
@@ -54815,6 +55016,78 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCouponsPage_vue_vue_type_template_id_2318b238___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ShowCouponsPage_vue_vue_type_template_id_2318b238___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/couponcreate.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/couponcreate.vue ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _couponcreate_vue_vue_type_template_id_042b536d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./couponcreate.vue?vue&type=template&id=042b536d& */ "./resources/js/components/couponcreate.vue?vue&type=template&id=042b536d&");
+/* harmony import */ var _couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./couponcreate.vue?vue&type=script&lang=js& */ "./resources/js/components/couponcreate.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _couponcreate_vue_vue_type_template_id_042b536d___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _couponcreate_vue_vue_type_template_id_042b536d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/couponcreate.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/couponcreate.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/couponcreate.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./couponcreate.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/couponcreate.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/couponcreate.vue?vue&type=template&id=042b536d&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/couponcreate.vue?vue&type=template&id=042b536d& ***!
+  \*********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_template_id_042b536d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./couponcreate.vue?vue&type=template&id=042b536d& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/couponcreate.vue?vue&type=template&id=042b536d&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_template_id_042b536d___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_template_id_042b536d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

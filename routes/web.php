@@ -17,9 +17,24 @@
 
 //Route::get('/api/showcoupondetail/{id}','ShowCouponDetailsController@showdetails');
 
+//Route::get('/', function () {
+//    return view('landing');
+//});
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/CouponCreate', 'AppController@CouponCreate');
+
+//Route::get('/validate/result', 'AppController@Compare');
+
+//Route::get('/showcoupons', 'AppController@showallcoupons');
+
+Route::get('/validate', 'AppController@validateinput');
 
 
 //Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/fetchcoupondetails/{c_id}','showCouponDetailsController@showdetails');
+//Route::get('/fetchcoupondetails/{c_id}','showCouponDetailsController@showdetails');
