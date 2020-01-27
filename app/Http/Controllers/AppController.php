@@ -23,7 +23,7 @@ class AppController extends Controller
 
     public function validateinput(){
         //$data=$request->input();
-        return view('validate/validityEntries');
+        return view('landing');
     }
 
 
@@ -76,7 +76,7 @@ class AppController extends Controller
                 }
             }
         }
-        return view('validate/validateresult')->with(json_encode($response));
+        return json_encode($response);
 
 
 

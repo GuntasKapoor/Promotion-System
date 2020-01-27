@@ -6,6 +6,9 @@ import App from './components/App.vue';
 import ShowCouponDeatilsPage from "./components/ShowCouponDeatilsPage.vue";
 import ShowCouponsPage from "./components/ShowCouponsPage";
 import CouponCreate from "./components/couponcreate";
+import validateEntries from "./components/validateEntries";
+import validateresult from "./components/validateresult";
+
 //import App from
 Vue.use(VueRouter);
 Vue.use(Vuex);
@@ -34,6 +37,19 @@ const router = new VueRouter({
             path: '/CouponCreate',
             name: 'couponcreate',
             component: CouponCreate
+        },
+
+        {
+            path: '/validate',
+            name: 'validate',
+            component: validateEntries
+        },
+
+
+        {
+            path: '/api/couponvalidate/result',
+            name: 'validateresult',
+            component: validateresult
         }
 
 
