@@ -9,24 +9,18 @@
             <tr>
                 <th>Coupon ID</th>
                 <th>Coupon Name</th>
-                <th>Min Price</th>
                 <th>Discount(in %)</th>
                 <th>Validity</th>
                 <th>Max Discount</th>
-                <th>Cashback Type</th>
-                <th>Payment Method</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <th>{{results.c_id}}</th>
                 <th>{{results.c_name}} </th>
-                <th>{{results.c_minPrice}}</th>
                 <th>{{results.c_percentDiscount}}</th>
                 <th>{{results.c_validity}}</th>
                 <th>{{results.c_maxDiscount}}</th>
-                <th>{{results.c_cashbackType}}</th>
-                <th>{{results.c_paymentMethod}}</th>
 
 <!--            <th v-for="coupon in results" >-->
 <!--&lt;!&ndash;                v-bind:key="coupon.c_id"&ndash;&gt;-->
@@ -57,18 +51,18 @@
                 coupon:{
                     c_id: '',
                     c_name: '',
-                    c_minPrice: '',
+                    // c_minPrice: '',
                     c_percentDiscount: '',
                     c_validity: '',
                     c_maxDiscount: '',
-                    c_cashbackType: '',
-                    c_paymentMethod: ''
+                    // c_cashbackType: '',
+                    // c_paymentMethod: ''
                 }
             }
         },
 
         mounted(){
-            let url = "http://127.0.0.1:8001/api/fetchcoupondetails";
+            let url = "/api/fetchcoupondetails";
             const { params } = this.$route;
 
             axios.get(url, { params }).then(response => {

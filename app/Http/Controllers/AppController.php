@@ -23,7 +23,7 @@ class AppController extends Controller
 
     public function validateinput(){
         //$data=$request->input();
-        return view('validate/validityEntries');
+        return view('landing');
     }
 
 
@@ -68,7 +68,8 @@ class AppController extends Controller
                         if($dis>$coupon->c_maxDiscount){
                             $dis=$coupon->c_maxDiscount;
                         }
-                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.' , 'discount' => $dis];
+                        $pr=$prop->p_price-$dis;
+                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.' , 'price' => $pr];
 
                     }
 
@@ -76,7 +77,7 @@ class AppController extends Controller
                 }
             }
         }
-        return view('validate/validateresult')->with(json_encode($response));
+        return $response;
 
 
 
@@ -94,12 +95,12 @@ class AppController extends Controller
         print_r($req->input('c_property'));
         $data=array();
         foreach($p as $pp){
-        if(!empty($pp)){
-        $data[]=[
-        'c_id'=>$id,
-        'p_id'=>$pp,
-        ];
-        }
+            if(!empty($pp)){
+            $data[]=[
+            'c_id'=>$id,
+            'p_id'=>$pp,
+            ];
+            }
         }
         couponProperty::insert($data);
         print_r('Coupon has been created');

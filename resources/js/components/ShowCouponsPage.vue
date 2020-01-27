@@ -40,18 +40,18 @@
                 coupon:{
                     c_id: '',
                     c_name: '',
-                    c_minPrice: '',
+                    // c_minPrice: '',
                     c_percentDiscount: '',
                     c_validity: '',
                     c_maxDiscount: '',
-                    c_cashbackType: '',
-                    c_paymentMethod: ''
+                    // c_cashbackType: '',
+                    // c_paymentMethod: ''
                 }
             }
         },
 
         mounted(){
-            let url = "http://127.0.0.1:8001/api/showcoupons";
+            let url = "/api/showcoupons";
             axios.get(url).then(response => {
                 console.log(response.data);
                 this.results = response.data;

@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div>
         <div>
             <transition name="fade">
                 <router-view></router-view>

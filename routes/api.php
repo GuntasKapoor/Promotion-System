@@ -43,4 +43,4 @@ Route::post('/CouponCreate/submit1', 'AppController@submit1');
 
 //Route::post('/showdetails', 'AppController@showdetails');
 
-Route::post('/couponvalidate/result', 'AppController@compare');
+Route::get('/couponvalidate/result', 'AppController@compare');
