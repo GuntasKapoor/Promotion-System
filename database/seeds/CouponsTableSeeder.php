@@ -12,36 +12,30 @@ class CouponsTableSeeder extends Seeder
      */
     public function run()
     {
-        Coupons::truncate();
+        coupons::truncate();
 
-        Coupons::create([
+        coupons::create([
             'c_name' => '50% off',
-            'c_minPrice' => 1000,
             'c_percentDiscount' => 50,
             'c_validity' => '2020-09-12',
             'c_maxDiscount' => 2000,
-            'c_cashbackType' => 'oyo wallet',
-            'c_paymentMethod' => 'upi'
+            'c_activate' => true
         ]);
 
-        Coupons::create([
+        coupons::create([
             'c_name' => '20% off',
-            'c_minPrice' => 500,
             'c_percentDiscount' => 20,
             'c_validity' => '2020-09-12',
             'c_maxDiscount' => 1000,
-            'c_cashbackType' => 'cash back',
-            'c_paymentMethod' => 'credit card / debit card'
+            'c_activate' => true
         ]);
 
-        Coupons::create([
+        coupons::create([
             'c_name' => '70% off',
-            'c_minPrice' => 5000,
             'c_percentDiscount' => 70,
             'c_validity' => '2020-09-12',
             'c_maxDiscount' => 6000,
-            'c_cashbackType' => 'oyo wallet',
-            'c_paymentMethod' => 'upi / credit card'
+            'c_activate' => true
         ]);
     }
 }

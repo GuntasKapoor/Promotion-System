@@ -20,15 +20,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', function () {
-    return view('landing');
-});
+//Route::get('/', function () {
+//    return view('landing');
+//});
 
-Route::get('/showallproperties','propertiesController@showProperties');
-
-Route::get('/showcoupons','CouponsController@showallcoupons');
-
-Route::get('/fetchcoupondetails','CouponsController@showdetails');
+//Route::get('/showallproperties','propertiesController@showProperties');
+//
+//Route::get('/showcoupons','CouponsController@showallcoupons');
+//
+//Route::get('/fetchcoupondetails','CouponsController@showdetails');
 
 
 
@@ -44,3 +44,4 @@ Route::post('/CouponCreate/submit1', 'AppController@submit1');
 //Route::post('/showdetails', 'AppController@showdetails');
 
 Route::get('/couponvalidate/result', 'AppController@compare');
+

@@ -8,26 +8,36 @@ import ShowCouponsPage from "./components/ShowCouponsPage";
 import CouponCreate from "./components/couponcreate";
 import validateEntries from "./components/validateEntries";
 import validateresult from "./components/validateresult";
+import Home from './components/Home'
+import DeleteCoupon from './components/DeleteCoupon'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
 //import App from
 Vue.use(VueRouter);
 Vue.use(Vuex);
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+
 
 const router = new VueRouter({
      mode: 'history',
     routes: [
         {
-            path: '/api',
+            path: '/',
             name: 'home',
+            component: Home
+        },
+        {
+            path: '/showcoupons',
+            name: 'showcoupons',
             component: ShowCouponsPage
         },
-        // {
-        //     path: '/',
-        //     name: 'showcoupons',
-        //     component: Welcome
-        // },
 
         {
-            path: '/api/showcoupondetails/:c_id',
+            path: '/showcoupondetails/:c_id',
             name: 'showcoupondetail',
             component: ShowCouponDeatilsPage
         },
@@ -46,9 +56,15 @@ const router = new VueRouter({
 
 
         {
-            path: '/api/couponvalidate/result:valid:message:price',
+            path: '/api/couponvalidate/result/:c:p:u',
             name: 'validateresult',
             component: validateresult
+        },
+
+        {
+            path: '/DeleteCoupon',
+            name: 'delete',
+            component: DeleteCoupon
         }
 
 

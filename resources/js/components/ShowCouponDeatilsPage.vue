@@ -1,8 +1,8 @@
 <template>
 
-    <div style="background:#ECECEC; padding:30px; ">
+    <div>
         <div style="color: red">
-            <p> <h1>Copoun Details</h1></p>
+            <p> <h1>Coupon Details</h1></p>
         </div>
         <table class="table table-hover">
             <thead>
@@ -41,6 +41,8 @@
 
 
 <script>
+    import Header from '/Users/administrator/Documents/Promotion-System/resources/js/components/Header.vue'
+
     import axios from 'axios'
     export default {
         data(){
@@ -62,7 +64,7 @@
         },
 
         mounted(){
-            let url = "/api/fetchcoupondetails";
+            let url = "/fetchcoupondetails";
             const { params } = this.$route;
 
             axios.get(url, { params }).then(response => {
@@ -70,6 +72,9 @@
                 this.results = response.data;
             })
         },
+        components:{
+            Header
+        }
 
 
     }

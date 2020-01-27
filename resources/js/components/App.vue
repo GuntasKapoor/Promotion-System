@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Header></Header>
         <div>
             <transition name="fade">
                 <router-view></router-view>
@@ -9,16 +10,15 @@
 </template>
 
 <style>
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s
-    }
-    .fade-enter, .fade-leave-active {
-        opacity: 0
-    }
+
 </style>
 
 <script>
-
+import Header from "/Users/administrator/Documents/Promotion-System/resources/js/components/Header.vue"
     export default{
+    components:{
+        Header
     }
+    }
+
 </script>

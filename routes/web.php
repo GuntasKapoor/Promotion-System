@@ -23,6 +23,9 @@
 
 Auth::routes();
 
+Route::get('/', function () {
+    return view('landing');
+});
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/CouponCreate', 'AppController@CouponCreate');
@@ -33,8 +36,20 @@ Route::get('/CouponCreate', 'AppController@CouponCreate');
 
 Route::get('/validate', 'AppController@validateinput');
 
+Route::get('/showallproperties','propertiesController@showProperties');
 
+Route::get('/showcoupons','CouponsController@showallcoupons');
+
+//Route::get('/showcoupon','CouponsController@showallcoupons');
+
+Route::get('/fetchcoupondetails','CouponsController@showdetails');
 //Auth::routes();
+
+Route::delete('/coupon/{c_id}', 'CouponsController@destroy');
+
+Route::get('/coupons', 'CouponsController@index');
+
+Route::get('/DeleteCoupon', 'CouponsController@Del');
 
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/fetchcoupondetails/{c_id}','showCouponDetailsController@showdetails');
