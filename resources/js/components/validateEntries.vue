@@ -23,7 +23,7 @@
                coupon_id: '',
                property_id: '',
                user_id: '',
-               message:'sadasd'
+               // message:'sadasd'
            }
        },
        mounted() {
