@@ -73,7 +73,6 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
 import App from '../views/App.vue'
-import welcome from '../views/welcome.vue'
 /*
 import Welcome from '../views/welcome.vue'
 import navbar from '../js/components/Navbar.vue'
