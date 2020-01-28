@@ -1,16 +1,10 @@
 <template>
 
     <div>
-        <div>
-            <p> <h1>Validity</h1></p>
-        </div>
 
-        <!--        <h4>{{results.valid}}</h4>-->
-        <!--        val={{results.valid}};-->
-        <!--        <h1></h1>-->
         <div v-if="results.length===0">
             <div style="color: red">
-                <p> Make valid entries</p>
+                <p align="center"> Make valid entries</p>
                 <router-link :to="{name:'validate'}" class="btn btn-primary">Go back</router-link>
             </div>
         </div>
@@ -19,41 +13,22 @@
             <div v-if="results.valid">
 
                 <div style="color: red">
-                    <h1>Congrats</h1>
+                    <h1 align="center">Congrats</h1>
                 </div>
 
-                <h2>{{results.message}}</h2>
-                <h4>you effective price is <h1>{{results.price}}</h1></h4>
+                <h2 align="center">{{results.message}}</h2>
+                <h4 align="center">you effective price is {{results.price}}</h4>
+                <h2 align="center"> <router-link :to="{name:'validate'}" class="btn btn-primary">Go back</router-link></h2>
 
             </div>
             <div v-else>
                 <div style="color: red">
-                    <h1>Sorry!!</h1>
+                    <h1 align="center">Sorry!!</h1>
                 </div>
-                <h2>{{results.message}}</h2>
-                <router-link :to="{name:'validate'}" class="btn btn-primary">Go back</router-link>
+                <h2 align="center">{{results.message}}</h2>
+                <h2 align="center"> <router-link :to="{name:'validate'}" class="btn btn-primary">Go back</router-link></h2>
             </div>
         </div>
-
-        <!--        <table class="table table-hover">-->
-        <!--            <thead>-->
-        <!--            <tr>-->
-        <!--                <th>Coupon ID</th>-->
-        <!--                <th>Coupon Name</th>-->
-        <!--            </tr>-->
-        <!--            </thead>-->
-        <!--            <tbody>-->
-
-        <!--            <tr v-for="coupon in results" v-bind:key="coupon.c_id">-->
-        <!--                <td>{{ coupon.c_id}}</td>-->
-        <!--                <td>{{ coupon.c_name }}</td>-->
-        <!--                <td><router-link :to="{name:'showcoupondetail',params:{c_id :coupon.c_id}}" class="btn btn-primary">View</router-link></td>-->
-        <!--                &lt;!&ndash;                <td><router-link :to="{name: 'edit', params: { id: coupon.c_id }}" class="btn btn-primary">Edit</router-link></td>&ndash;&gt;-->
-        <!--                <td><button class="btn btn-danger">Delete</button></td>-->
-        <!--            </tr>-->
-        <!--            </tbody>-->
-        <!--        </table>-->
-
 
     </div>
 </template>
@@ -72,7 +47,6 @@
         mounted(){
             let url = "/api/couponvalidate/result";
             const { params } = this.$route;
-            console.log(params)
             axios.get(url, { params }).then(response => {
                 console.log(response.data);
                 this.results = response.data;

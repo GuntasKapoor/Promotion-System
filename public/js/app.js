@@ -2189,11 +2189,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {}
 });
@@ -2464,31 +2459,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2502,7 +2472,6 @@ __webpack_require__.r(__webpack_exports__);
 
     var url = "/api/couponvalidate/result";
     var params = this.$route.params;
-    console.log(params);
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url, {
       params: params
     }).then(function (response) {
@@ -72809,42 +72778,29 @@ var render = function() {
       _c(
         "b-card",
         [
-          _c(
-            "b-media",
-            {
-              scopedSlots: _vm._u([
-                {
-                  key: "aside",
-                  fn: function() {
-                    return undefined
-                  },
-                  proxy: true
-                }
-              ])
-            },
-            [
+          _c("b-media", [
+            _c("div", { staticClass: "jumbotron" }, [
+              _c("h1", { staticClass: "display-4" }, [_vm._v("About Project")]),
               _vm._v(" "),
-              _c("h1", { staticClass: "mt-0" }, [_vm._v("About Project")]),
-              _vm._v(" "),
-              _c("p", [
+              _c("p", { staticClass: "lead" }, [
                 _vm._v(
-                  " This application is a one CRUD operation to manage  promotion coupons - Create/Read/Update/Delete.\n\n            You can also check the validity of coupons by applying them to different listed properties\n        "
+                  " This application is a one CRUD operation to manage  promotion coupons - Create/Read/Update/Delete.\n\n                        You can also check the validity of coupons by applying them to different listed properties"
                 )
               ]),
               _vm._v(" "),
-              _c("p", [
+              _c("p", { staticClass: "lead" }, [
                 _vm._v(
-                  "\n            Note: A coupon is created with an activation status 1 (ACTIVE). To deactivate it, update the activation status by editing the coupon.\n\n\n        "
+                  "\n                        Note: A coupon is created with an activation status 1 (ACTIVE). To deactivate it, update the activation status by editing the coupon.\n"
                 )
               ]),
               _vm._v(" "),
-              _c("p", [
+              _c("p", { staticClass: "lead" }, [
                 _vm._v(
-                  "\n\n            Laravel 3 + Vue.js + Axios - Simple CRUD Application\n            Simple project demonstrating how Laravel works with Vue.js.\n            Application is based on MVC architecture and has CRUD functionalities"
+                  "\n                        Laravel 3 + Vue.js - Simple CRUD Application\n                        Simple project demonstrating how Laravel works with Vue.js.\n                        Application is based on MVC architecture and has CRUD functionalities"
                 )
               ])
-            ]
-          )
+            ])
+          ])
         ],
         1
       )
@@ -73355,15 +73311,15 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
     _vm.results.length === 0
       ? _c("div", [
           _c(
             "div",
             { staticStyle: { color: "red" } },
             [
-              _c("p", [_vm._v(" Make valid entries")]),
+              _c("p", { attrs: { align: "center" } }, [
+                _vm._v(" Make valid entries")
+              ]),
               _vm._v(" "),
               _c(
                 "router-link",
@@ -73380,33 +73336,55 @@ var render = function() {
       : _c("div", [
           _vm.results.valid
             ? _c("div", [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("h2", { attrs: { align: "center" } }, [
+                  _vm._v(_vm._s(_vm.results.message))
+                ]),
+                _vm._v(" "),
+                _c("h4", { attrs: { align: "center" } }, [
+                  _vm._v("you effective price is " + _vm._s(_vm.results.price))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "h2",
+                  { attrs: { align: "center" } },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { to: { name: "validate" } }
+                      },
+                      [_vm._v("Go back")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            : _c("div", [
                 _vm._m(1),
                 _vm._v(" "),
-                _c("h2", [_vm._v(_vm._s(_vm.results.message))]),
+                _c("h2", { attrs: { align: "center" } }, [
+                  _vm._v(_vm._s(_vm.results.message))
+                ]),
                 _vm._v(" "),
-                _c("h4", [
-                  _vm._v("you effective price is "),
-                  _c("h1", [_vm._v(_vm._s(_vm.results.price))])
-                ])
+                _c(
+                  "h2",
+                  { attrs: { align: "center" } },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { to: { name: "validate" } }
+                      },
+                      [_vm._v("Go back")]
+                    )
+                  ],
+                  1
+                )
               ])
-            : _c(
-                "div",
-                [
-                  _vm._m(2),
-                  _vm._v(" "),
-                  _c("h2", [_vm._v(_vm._s(_vm.results.message))]),
-                  _vm._v(" "),
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "btn btn-primary",
-                      attrs: { to: { name: "validate" } }
-                    },
-                    [_vm._v("Go back")]
-                  )
-                ],
-                1
-              )
         ])
   ])
 }
@@ -73415,14 +73393,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("p"), _c("h1", [_vm._v("Validity")]), _c("p")])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticStyle: { color: "red" } }, [
-      _c("h1", [_vm._v("Congrats")])
+      _c("h1", { attrs: { align: "center" } }, [_vm._v("Congrats")])
     ])
   },
   function() {
@@ -73430,7 +73402,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticStyle: { color: "red" } }, [
-      _c("h1", [_vm._v("Sorry!!")])
+      _c("h1", { attrs: { align: "center" } }, [_vm._v("Sorry!!")])
     ])
   }
 ]
