@@ -2083,6 +2083,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -72593,6 +72601,8 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
       _c("h4", { attrs: { align: "center" } }, [
         _c("input", {
           attrs: { name: "c_id", type: "hidden", required: "" },
@@ -72600,7 +72610,7 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _vm._m(1)
+      _vm._m(2)
     ])
   ])
 }
@@ -72611,6 +72621,51 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("h1", { attrs: { align: "center" } }, [_vm._v("Edit Coupon Details")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { attrs: { align: "center" } }, [
+      _vm._v(" select properties"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "1" }
+      }),
+      _vm._v(" property1"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "2" }
+      }),
+      _vm._v(" property2"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "3" }
+      }),
+      _vm._v(" property3"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "4" }
+      }),
+      _vm._v(" property4"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "5" }
+      }),
+      _vm._v(" property5"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "6" }
+      }),
+      _vm._v(" property6"),
+      _c("br")
     ])
   },
   function() {
@@ -90356,8 +90411,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/administrator/Desktop/Promotion-System/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/administrator/Desktop/Promotion-System/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/Samarth/Promotion-System/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/Samarth/Promotion-System/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

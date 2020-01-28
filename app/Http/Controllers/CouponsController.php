@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\coupons;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\couponProperty;
+use Illuminate\Support\Facades\Auth;
+//use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use phpDocumentor\Reflection\DocBlock\Tags\Property;
 
 class CouponsController extends Controller{
 
@@ -62,6 +67,19 @@ class CouponsController extends Controller{
             'c_maxDiscount' => $request->input('c_maxDiscount'),
             'c_activate' => $request->input('c_activate')
         ]);
+        DB::delete('delete from coupon_properties where c_id = ?',[$request->input('c_id')]);
+
+        $p=$request->input('c_property');
+        $data=array();
+        foreach($p as $pp){
+            if(!empty($pp)){
+                $data[]=[
+                    'c_id'=>$request->input('c_id'),
+                    'p_id'=>$pp,
+                ];
+            }
+        }
+        couponProperty::insert($data);
 
 
         return redirect('/showcoupons');
