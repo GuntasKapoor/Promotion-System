@@ -2412,11 +2412,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -73210,8 +73205,6 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
     _vm.results.length === 0
       ? _c("div", [
           _c(
@@ -73235,33 +73228,55 @@ var render = function() {
       : _c("div", [
           _vm.results.valid
             ? _c("div", [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("h2", { attrs: { align: "center" } }, [
+                  _vm._v(_vm._s(_vm.results.message))
+                ]),
+                _vm._v(" "),
+                _c("h4", { attrs: { align: "center" } }, [
+                  _vm._v("you effective price is " + _vm._s(_vm.results.price))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "h2",
+                  { attrs: { align: "center" } },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { to: { name: "validate" } }
+                      },
+                      [_vm._v("Go back")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            : _c("div", [
                 _vm._m(1),
                 _vm._v(" "),
-                _c("h2", [_vm._v(_vm._s(_vm.results.message))]),
+                _c("h2", { attrs: { align: "center" } }, [
+                  _vm._v(_vm._s(_vm.results.message))
+                ]),
                 _vm._v(" "),
-                _c("h4", [
-                  _vm._v("you effective price is "),
-                  _c("h1", [_vm._v(_vm._s(_vm.results.price))])
-                ])
+                _c(
+                  "h2",
+                  { attrs: { align: "center" } },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { to: { name: "validate" } }
+                      },
+                      [_vm._v("Go back")]
+                    )
+                  ],
+                  1
+                )
               ])
-            : _c(
-                "div",
-                [
-                  _vm._m(2),
-                  _vm._v(" "),
-                  _c("h2", [_vm._v(_vm._s(_vm.results.message))]),
-                  _vm._v(" "),
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "btn btn-primary",
-                      attrs: { to: { name: "validate" } }
-                    },
-                    [_vm._v("Go back")]
-                  )
-                ],
-                1
-              )
         ])
   ])
 }
@@ -73270,14 +73285,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [_c("p"), _c("h1", [_vm._v("Validity")]), _c("p")])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticStyle: { color: "red" } }, [
-      _c("h1", [_vm._v("Congrats")])
+      _c("h1", { attrs: { align: "center" } }, [_vm._v("Congrats")])
     ])
   },
   function() {
@@ -73285,7 +73294,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticStyle: { color: "red" } }, [
-      _c("h1", [_vm._v("Sorry!!")])
+      _c("h1", { attrs: { align: "center" } }, [_vm._v("Sorry!!")])
     ])
   }
 ]
