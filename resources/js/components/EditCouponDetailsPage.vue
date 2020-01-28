@@ -11,6 +11,7 @@
             <h4 align="center"> Percentage Discount: <input name="c_percentDiscount" :value=results.c_percentDiscount type="number" required></h4>
             <h4 align="center"> Coupon Validity: <input name="c_validity" :value=results.c_validity type="date" required></h4>
             <h4 align="center"> Max Discount: <input name="c_maxDiscount" :value=results.c_maxDiscount type="number" required></h4>
+            <h4 align="center"> Activation status: <input name="c_activate" :value=results.c_activate type="number" required ></h4>
             <h4 align="center"> <input name="c_id" :value=results.c_id type="hidden" required></h4>
             <h4 align="center"><input type="submit" value="Update" align="center" onclick="alert('Coupon updated successfully')"></h4>
         </form>

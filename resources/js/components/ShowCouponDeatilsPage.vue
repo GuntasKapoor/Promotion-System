@@ -12,6 +12,7 @@
                 <th>Discount(in %)</th>
                 <th>Validity</th>
                 <th>Max Discount</th>
+                <th>Activation Status</th>
             </tr>
             </thead>
             <tbody>
@@ -21,6 +22,7 @@
                 <th>{{results.c_percentDiscount}}</th>
                 <th>{{results.c_validity}}</th>
                 <th>{{results.c_maxDiscount}}</th>
+                <th>{{results.c_activate}}</th>
 
 <!--            <th v-for="coupon in results" >-->
 <!--&lt;!&ndash;                v-bind:key="coupon.c_id"&ndash;&gt;-->
@@ -57,8 +59,7 @@
                     c_percentDiscount: '',
                     c_validity: '',
                     c_maxDiscount: '',
-                    // c_cashbackType: '',
-                    // c_paymentMethod: ''
+                    c_activate: ''
                 }
             }
         },

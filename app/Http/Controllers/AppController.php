@@ -12,6 +12,8 @@ use App\couponuser;
 use Illuminate\Support\Facades\Session;
 use phpDocumentor\Reflection\DocBlock\Tags\Property;
 
+
+
 class AppController extends Controller
 {
     public function CouponCreate(){
@@ -49,19 +51,20 @@ class AppController extends Controller
             $response = ['valid' => false, 'message' => 'Coupon code not recognised', 'price'=>$prop];
         }
         else{
-            $pr=properties::where('p_id',$pp)->first();
-            if(!$pr){
-                $response=['valid' => false, 'message' => 'Invalid Property', 'price'=>$prop];
-                return $response;
-            }
+
 
             $coupon=coupons::where('c_id',$cc)
                 ->where('c_validity','>=',Carbon::now())
-                ->where('c_activate',1)->count();
+                ->where('c_activate','=', true)->count();
             if(!$coupon){
                 $response = ['valid' => false, 'message' => 'Coupon code has expired', 'price'=>$prop];
             }
             else {
+                $pr=properties::where('p_id',$pp)->first();
+                if(!$pr){
+                    $response=['valid' => false, 'message' => 'Invalid Property', 'price'=>$prop];
+                    return $response;
+                }
                 $zz = couponProperty::where('c_id', $cc)
                     ->where('p_id', $pp)->count();
                 if (!$zz) {
@@ -101,26 +104,25 @@ class AppController extends Controller
 
     public function submit1(Request $req){
 
-        $id = DB::table('coupons')->insertGetId(
-        ['c_name' => $req->input('c-name'), 'c_percentDiscount' => $req->input('c-percent'),
-        'c_validity' => $req->input('c-validity'), 'c_maxDiscount' => $req->input('c-maxdiscount'),
-        'c_activate' => true]
-        );
 
-        $p=$req->input('c_property');
-        print_r($req->input('c_property'));
-        $data=array();
-        foreach($p as $pp){
-            if(!empty($pp)){
-            $data[]=[
-            'c_id'=>$id,
-            'p_id'=>$pp,
-            ];
+            $id = DB::table('coupons')->insertGetId(
+            ['c_name' => $req->input('c-name'), 'c_percentDiscount' => $req->input('c-percent'),
+            'c_validity' => $req->input('c-validity'), 'c_maxDiscount' => $req->input('c-maxdiscount'),
+            'c_activate' => true]
+            );
+
+            $p=$req->input('c_property');
+            $data=array();
+            foreach($p as $pp){
+                if(!empty($pp)){
+                $data[]=[
+                'c_id'=>$id,
+                'p_id'=>$pp,
+                ];
+                }
             }
-        }
-        couponProperty::insert($data);
-//        print_r('Coupon has been created');
-//        Session::flash('Success','Coupon created successfully');
+            couponProperty::insert($data);
+
         return redirect('/CouponCreate');
     }
 

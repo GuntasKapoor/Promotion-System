@@ -2082,6 +2082,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2212,6 +2213,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2225,9 +2228,8 @@ __webpack_require__.r(__webpack_exports__);
         // c_minPrice: '',
         c_percentDiscount: '',
         c_validity: '',
-        c_maxDiscount: '' // c_cashbackType: '',
-        // c_paymentMethod: ''
-
+        c_maxDiscount: '',
+        c_activate: ''
       }
     };
   },
@@ -2336,48 +2338,6 @@ __webpack_require__.r(__webpack_exports__);
   //
   // }
 
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/couponcreate.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/couponcreate.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// import Header from '/Users/administrator/Documents/Promotion-System/resources/js/components/Header.vue'
-/* harmony default export */ __webpack_exports__["default"] = ({// components: Header
 });
 
 /***/ }),
@@ -72629,6 +72589,14 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("h4", { attrs: { align: "center" } }, [
+          _vm._v(" Activation status: "),
+          _c("input", {
+            attrs: { name: "c_activate", type: "number", required: "" },
+            domProps: { value: _vm.results.c_activate }
+          })
+        ]),
+        _vm._v(" "),
+        _c("h4", { attrs: { align: "center" } }, [
           _c("input", {
             attrs: { name: "c_id", type: "hidden", required: "" },
             domProps: { value: _vm.results.c_id }
@@ -72842,7 +72810,9 @@ var render = function() {
           _vm._v(" "),
           _c("th", [_vm._v(_vm._s(_vm.results.c_validity))]),
           _vm._v(" "),
-          _c("th", [_vm._v(_vm._s(_vm.results.c_maxDiscount))])
+          _c("th", [_vm._v(_vm._s(_vm.results.c_maxDiscount))]),
+          _vm._v(" "),
+          _c("th", [_vm._v(_vm._s(_vm.results.c_activate))])
         ])
       ])
     ])
@@ -72873,7 +72843,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Validity")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Max Discount")])
+        _c("th", [_vm._v("Max Discount")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Activation Status")])
       ])
     ])
   }
@@ -73014,7 +72986,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "form",
+      { attrs: { method: "post", action: "/api/CouponCreate/submit1" } },
+      [
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _vm._m(3),
+        _vm._v(" "),
+        _vm._m(4),
+        _vm._v(" "),
+        _vm._m(5),
+        _vm._v(" "),
+        _c(
+          "b-col",
+          { attrs: { align: "center" } },
+          [
+            _c("b-button", { attrs: { type: "submit", variant: "primary" } }, [
+              _vm._v("Submit")
+            ])
+          ],
+          1
+        )
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
@@ -73022,96 +73024,98 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", [
-      _c("div", [
-        _c("p"),
-        _c("h1", { attrs: { align: "center" } }, [_vm._v("Create Coupon")]),
-        _c("p")
-      ]),
+      _c("h1", { attrs: { align: "center" } }, [_vm._v("Create Coupon")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { attrs: { align: "center" } }, [
+      _vm._v(" Coupon Name: "),
+      _c("input", { attrs: { name: "c-name", type: "text", required: "" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { attrs: { align: "center" } }, [
+      _vm._v(" Percentage Discount: "),
+      _c("input", {
+        attrs: {
+          name: "c-percent",
+          type: "number",
+          min: "0",
+          max: "100",
+          required: ""
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { attrs: { align: "center" } }, [
+      _vm._v(" Coupon Validity: "),
+      _c("input", { attrs: { name: "c-validity", type: "date", required: "" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { attrs: { align: "center" } }, [
+      _vm._v(" Max Discount: "),
+      _c("input", {
+        attrs: { name: "c-maxdiscount", type: "number", min: "0", required: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { attrs: { align: "center" } }, [
+      _vm._v(" select properties"),
+      _c("br"),
       _vm._v(" "),
-      _c(
-        "form",
-        { attrs: { method: "post", action: "/api/CouponCreate/submit1" } },
-        [
-          _c("h4", { attrs: { align: "center" } }, [
-            _vm._v(" Coupon Name: "),
-            _c("input", {
-              attrs: { name: "c-name", type: "text", required: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("h4", { attrs: { align: "center" } }, [
-            _vm._v(" Percentage Discount: "),
-            _c("input", {
-              attrs: { name: "c-percent", type: "number", required: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("h4", { attrs: { align: "center" } }, [
-            _vm._v(" Coupon Validity: "),
-            _c("input", {
-              attrs: { name: "c-validity", type: "date", required: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("h4", { attrs: { align: "center" } }, [
-            _vm._v(" Max Discount: "),
-            _c("input", {
-              attrs: { name: "c-maxdiscount", type: "number", required: "" }
-            })
-          ]),
-          _vm._v(" "),
-          _c("h4", { attrs: { align: "center" } }, [
-            _vm._v(" select properties"),
-            _c("br"),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "checkbox", name: "c_property[]", value: "1" }
-            }),
-            _vm._v(" property1"),
-            _c("br"),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "checkbox", name: "c_property[]", value: "2" }
-            }),
-            _vm._v(" property2"),
-            _c("br"),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "checkbox", name: "c_property[]", value: "3" }
-            }),
-            _vm._v(" property3"),
-            _c("br"),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "checkbox", name: "c_property[]", value: "4" }
-            }),
-            _vm._v(" property4"),
-            _c("br"),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "checkbox", name: "c_property[]", value: "5" }
-            }),
-            _vm._v(" property5"),
-            _c("br"),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "checkbox", name: "c_property[]", value: "6" }
-            }),
-            _vm._v(" property6"),
-            _c("br")
-          ]),
-          _vm._v(" "),
-          _c("h4", { attrs: { align: "center" } }, [
-            _c("input", {
-              attrs: {
-                type: "submit",
-                align: "center",
-                onclick: "alert('Coupon created successfully')"
-              }
-            })
-          ])
-        ]
-      )
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "1" }
+      }),
+      _vm._v(" property1"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "2" }
+      }),
+      _vm._v(" property2"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "3" }
+      }),
+      _vm._v(" property3"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "4" }
+      }),
+      _vm._v(" property4"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "5" }
+      }),
+      _vm._v(" property5"),
+      _c("br"),
+      _vm._v(" "),
+      _c("input", {
+        attrs: { type: "checkbox", name: "c_property[]", value: "6" }
+      }),
+      _vm._v(" property6"),
+      _c("br")
     ])
   }
 ]
@@ -73231,7 +73235,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("Check")]
+            [_vm._v("Apply")]
           )
         ],
         1
@@ -90157,17 +90161,15 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _couponcreate_vue_vue_type_template_id_042b536d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./couponcreate.vue?vue&type=template&id=042b536d& */ "./resources/js/components/couponcreate.vue?vue&type=template&id=042b536d&");
-/* harmony import */ var _couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./couponcreate.vue?vue&type=script&lang=js& */ "./resources/js/components/couponcreate.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-
-
+var script = {}
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
   _couponcreate_vue_vue_type_template_id_042b536d___WEBPACK_IMPORTED_MODULE_0__["render"],
   _couponcreate_vue_vue_type_template_id_042b536d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -90181,20 +90183,6 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/couponcreate.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/couponcreate.vue?vue&type=script&lang=js&":
-/*!***************************************************************************!*\
-  !*** ./resources/js/components/couponcreate.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./couponcreate.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/couponcreate.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_couponcreate_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -90372,8 +90360,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/charvigupta/Documents/testing/Promotion-System/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/charvigupta/Documents/testing/Promotion-System/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/administrator/Desktop/Promotion-System/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/administrator/Desktop/Promotion-System/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

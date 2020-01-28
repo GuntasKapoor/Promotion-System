@@ -26,6 +26,13 @@ class CouponsController extends Controller{
 
         return $showthiscoupon;
     }
+    public function editCouponDetail(Request $request){
+        return view('landing');
+    }
+    public function showdetail(Request $request){
+
+        return view('landing');
+    }
 
     public function destroy($id)
     {
@@ -52,7 +59,8 @@ class CouponsController extends Controller{
             'c_name' => $request->input('c_name'),
             'c_percentDiscount' => $request->input('c_percentDiscount'),
             'c_validity' => $request->input('c_validity'),
-            'c_maxDiscount' => $request->input('c_maxDiscount')
+            'c_maxDiscount' => $request->input('c_maxDiscount'),
+            'c_activate' => $request->input('c_activate')
         ]);
 
 
