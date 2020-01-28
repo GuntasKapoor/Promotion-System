@@ -35,13 +35,13 @@ class AppController extends Controller
         $cc=$r->input('c');
         $pp=$r->input('p');
         $uu=$r->input('u');
-        
-        $prop=properties::where('p_id',$pp)->first();
-//        $prop = DB::table('properties')->select('p_price')->where('p_id', $pp)->g();
-//        $pr=properties::find($pp)->first();
-//        $prop=$prop->p_price;
-//        $prop->p_price;
-        $prop=$prop->p_price;
+        $response=[];
+        if(!($cc&&$pp&&$uu)){
+            return $response;
+        }
+
+        $pr=properties::where('p_id',$pp)->first();
+        $prop=0;
         $coupon=coupons::where('c_id',$cc)->count();
 
         if(!$coupon){
@@ -49,6 +49,11 @@ class AppController extends Controller
             $response = ['valid' => false, 'message' => 'Coupon code not recognised', 'price'=>$prop];
         }
         else{
+            $pr=properties::where('p_id',$pp)->first();
+            if(!$pr){
+                $response=['valid' => false, 'message' => 'Invalid Property', 'price'=>$prop];
+                return $response;
+            }
 
             $coupon=coupons::where('c_id',$cc)
                 ->where('c_validity','>=',Carbon::now())
@@ -80,7 +85,7 @@ class AppController extends Controller
                             $dis=$coupon->c_maxDiscount;
                         }
                         $pr=$prop->p_price-$dis;
-                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.', 'price'=>$prop ];
+                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.', 'price'=>$pr ];
 
                     }
 
@@ -119,10 +124,7 @@ class AppController extends Controller
         return redirect('/CouponCreate');
     }
 
-    public function update(Request $request,$id)
-    {
 
-    }
 
 
 

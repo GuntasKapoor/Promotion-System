@@ -10,7 +10,6 @@
       <b-navbar-nav type = "primary">
         <b-nav-item to = "/">Home</b-nav-item>
         <b-nav-item to = "/CouponCreate" >CreateCoupon</b-nav-item>
-        <b-nav-item to = "/UpdateCoupon">UpdateCoupon</b-nav-item>
         <b-nav-item to = "/showcoupons">ShowCoupon</b-nav-item>
         <b-nav-item to = "/DeleteCoupon">DeleteCoupons</b-nav-item>
         <b-nav-item to = "/validate">ApplyCoupon</b-nav-item>

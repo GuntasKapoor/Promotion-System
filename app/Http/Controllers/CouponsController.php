@@ -10,14 +10,13 @@ class CouponsController extends Controller{
 
     public function showallcoupons(){
         $showcoupons = coupons::all()->toArray();
-
         return $showcoupons;
     }
     public function showallcoupon(){
         return view('landing');
     }
     public function del(){
-        
+
         return view('landing');
     }
 
@@ -42,4 +41,24 @@ class CouponsController extends Controller{
 
         return $showcoupons;
     }
+
+    public function editCouponDetails(Request $request)
+    {
+
+
+        $coupon = DB::table('coupons')->where('c_id', $request->input('c_id'));
+
+        $coupon->update([
+            'c_name' => $request->input('c_name'),
+            'c_percentDiscount' => $request->input('c_percentDiscount'),
+            'c_validity' => $request->input('c_validity'),
+            'c_maxDiscount' => $request->input('c_maxDiscount')
+        ]);
+
+
+        return redirect('/showcoupons');
+    }
+
+
+
 }

@@ -14,7 +14,7 @@
 </style>
 
 <script>
-import Header from "/Users/administrator/Documents/Promotion-System/resources/js/components/Header.vue"
+import Header from '../components/Header.vue'
     export default{
     components:{
         Header

@@ -1908,7 +1908,7 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_administrator_Documents_Promotion_System_resources_js_components_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resources/js/components/Header.vue */ "./resources/js/components/Header.vue");
+/* harmony import */ var _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header.vue */ "./resources/js/components/Header.vue");
 //
 //
 //
@@ -1927,7 +1927,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    Header: _Users_administrator_Documents_Promotion_System_resources_js_components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -1942,9 +1942,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_administrator_Documents_Promotion_System_resources_js_components_QB_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resources/js/components/QB.vue */ "./resources/js/components/QB.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -1973,11 +1972,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
+//
+// import QB from '/Users/charvigupta/Documents/testing/Promotion-System/resources/js/components/QB.vue'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    QB: _Users_administrator_Documents_Promotion_System_resources_js_components_QB_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  components: {// QB
   },
   data: function data() {
     return {
@@ -2016,7 +2017,7 @@ __webpack_require__.r(__webpack_exports__);
       //     alert('Failed!');
       // })
       var url = "/coupons";
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
         // console.log(response.data);
         _this.couponsarr = response.data;
         console.log(_this.couponsarr);
@@ -2026,7 +2027,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       var uri = "/coupon/".concat(id);
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"](uri).then(function () {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a["delete"](uri).then(function () {
         alert('Coupon Removed');
 
         _this2.fetchcoupons();
@@ -2045,6 +2046,72 @@ __webpack_require__.r(__webpack_exports__);
     })*/
   } // }
 
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditCouponDetailsPage.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EditCouponDetailsPage.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      data: null,
+      results: [],
+      coupon: {
+        c_id: '',
+        c_name: '',
+        c_minPrice: '',
+        c_percentDiscount: '',
+        c_validity: '',
+        c_maxDiscount: '',
+        c_cashbackType: '',
+        c_paymentMethod: ''
+      }
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    var url = "/fetchcoupondetails";
+    var params = this.$route.params;
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url, {
+      params: params
+    }).then(function (response) {
+      console.log(response.data);
+      _this.results = response.data;
+    });
+  }
 });
 
 /***/ }),
@@ -2100,7 +2167,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_administrator_Documents_Promotion_System_resources_js_components_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./resources/js/components/Header.vue */ "./resources/js/components/Header.vue");
+/* harmony import */ var _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header.vue */ "./resources/js/components/Header.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 //
@@ -2177,7 +2244,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   components: {
-    Header: _Users_administrator_Documents_Promotion_System_resources_js_components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
 
@@ -2194,6 +2261,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
 //
 //
 //
@@ -2244,7 +2312,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    var url = "/showcoupons";
+    var url = "/showallcoupons";
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
       // console.log(response.data);
       _this.results = response.data;
@@ -2368,6 +2436,20 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -40276,7 +40358,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*#app {*/\n/*    font-family: 'Avenir', Helvetica, Arial, sans-serif;*/\n/*    -webkit-font-smoothing: antialiased;*/\n/*    -moz-osx-font-smoothing: grayscale;*/\n/*    text-align: center;*/\n/*    color: #2c3e50;*/\n/*    margin-top: 60px;*/\n/*}*/\n/*html, body{*/\n/*    padding: 0;*/\n/*    margin: 0;*/\n/*}*/\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*#app {*/\n/*    font-family: 'Avenir', Helvetica, Arial, sans-serif;*/\n/*    -webkit-font-smoothing: antialiased;*/\n/*    -moz-osx-font-smoothing: grayscale;*/\n/*    text-align: center;*/\n/*    color: #2c3e50;*/\n/*    margin-top: 60px;*/\n/*}*/\n/*html, body{*/\n/*    padding: 0;*/\n/*    margin: 0;*/\n/*}*/\n", ""]);
 
 // exports
 
@@ -72434,30 +72516,34 @@ var render = function() {
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.couponsarr, function(coup) {
-          return _c("tr", { key: coup.c_id }, [
-            _c("td", [_vm._v(_vm._s(coup.c_id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(coup.c_name))]),
-            _vm._v(" "),
-            _c("td", [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-outline-danger",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      return _vm.deletecoupon(coup.c_id)
-                    }
-                  }
-                },
-                [_vm._v("Delete")]
-              )
-            ])
-          ])
-        }),
-        0
+        [
+          _vm.couponsarr.length == 0
+            ? _c("tr", [_vm._m(1)])
+            : _vm._l(_vm.couponsarr, function(coup) {
+                return _c("tr", { key: coup.c_id }, [
+                  _c("td", [_vm._v(_vm._s(coup.c_id))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(coup.c_name))]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-outline-danger",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.deletecoupon(coup.c_id)
+                          }
+                        }
+                      },
+                      [_vm._v("Delete")]
+                    )
+                  ])
+                ])
+              })
+        ],
+        2
       )
     ])
   ])
@@ -72473,6 +72559,109 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Coupon Name")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("h5", [_vm._v(" No Coupons to delete.")])])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditCouponDetailsPage.vue?vue&type=template&id=2492f126&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EditCouponDetailsPage.vue?vue&type=template&id=2492f126& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticStyle: { background: "#ECECEC", padding: "30px" } },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("form", { attrs: { method: "post", action: "/api/editted/" } }, [
+        _c("h4", { attrs: { align: "center" } }, [
+          _vm._v(" Coupon Code: "),
+          _c("input", {
+            attrs: { name: "c_name", type: "text", required: "" },
+            domProps: { value: _vm.results.c_name }
+          })
+        ]),
+        _vm._v(" "),
+        _c("h4", { attrs: { align: "center" } }, [
+          _vm._v(" Percentage Discount: "),
+          _c("input", {
+            attrs: { name: "c_percentDiscount", type: "number", required: "" },
+            domProps: { value: _vm.results.c_percentDiscount }
+          })
+        ]),
+        _vm._v(" "),
+        _c("h4", { attrs: { align: "center" } }, [
+          _vm._v(" Coupon Validity: "),
+          _c("input", {
+            attrs: { name: "c_validity", type: "date", required: "" },
+            domProps: { value: _vm.results.c_validity }
+          })
+        ]),
+        _vm._v(" "),
+        _c("h4", { attrs: { align: "center" } }, [
+          _vm._v(" Max Discount: "),
+          _c("input", {
+            attrs: { name: "c_maxDiscount", type: "number", required: "" },
+            domProps: { value: _vm.results.c_maxDiscount }
+          })
+        ]),
+        _vm._v(" "),
+        _c("h4", { attrs: { align: "center" } }, [
+          _c("input", {
+            attrs: { name: "c_id", type: "hidden", required: "" },
+            domProps: { value: _vm.results.c_id }
+          })
+        ]),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: { color: "red" } }, [
+      _c("h1", { attrs: { align: "center" } }, [_vm._v("Edit Coupon Details")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h4", { attrs: { align: "center" } }, [
+      _c("input", {
+        attrs: {
+          type: "submit",
+          value: "Update",
+          align: "center",
+          onclick: "alert('Coupon updated successfully')"
+        }
+      })
     ])
   }
 ]
@@ -72522,10 +72711,6 @@ var render = function() {
                   _vm._v(" "),
                   _c("b-nav-item", { attrs: { to: "/CouponCreate" } }, [
                     _vm._v("CreateCoupon")
-                  ]),
-                  _vm._v(" "),
-                  _c("b-nav-item", { attrs: { to: "/UpdateCoupon" } }, [
-                    _vm._v("UpdateCoupon")
                   ]),
                   _vm._v(" "),
                   _c("b-nav-item", { attrs: { to: "/showcoupons" } }, [
@@ -72722,34 +72907,58 @@ var render = function() {
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.results, function(coupon) {
-          return _c("tr", { key: coupon.c_id }, [
-            _c("td", [_vm._v(_vm._s(coupon.c_id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(coupon.c_name))]),
-            _vm._v(" "),
-            _c(
-              "td",
-              [
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: {
-                      to: {
-                        name: "showcoupondetail",
-                        params: { c_id: coupon.c_id }
-                      }
-                    }
-                  },
-                  [_vm._v("View")]
-                )
-              ],
-              1
-            )
-          ])
-        }),
-        0
+        [
+          _vm.results.length == 0
+            ? _c("tr", [_vm._m(2)])
+            : _vm._l(_vm.results, function(coupon) {
+                return _c("tr", { key: coupon.c_id }, [
+                  _c("td", [_vm._v(_vm._s(coupon.c_id))]),
+                  _vm._v(" "),
+                  _c("td", [_vm._v(_vm._s(coupon.c_name))]),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-primary",
+                          attrs: {
+                            to: {
+                              name: "showcoupondetail",
+                              params: { c_id: coupon.c_id }
+                            }
+                          }
+                        },
+                        [_vm._v("View")]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          staticClass: "btn btn-primary",
+                          attrs: {
+                            to: {
+                              name: "editCoupon",
+                              params: { c_id: coupon.c_id }
+                            }
+                          }
+                        },
+                        [_vm._v("Edit")]
+                      )
+                    ],
+                    1
+                  )
+                ])
+              })
+        ],
+        2
       )
     ])
   ])
@@ -72776,6 +72985,12 @@ var staticRenderFns = [
         _c("th", [_vm._v("Coupon Name")])
       ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [_c("h5", [_vm._v(" Coupon List is empty.")])])
   }
 ]
 render._withStripped = true
@@ -73016,7 +73231,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v("View")]
+            [_vm._v("Check")]
           )
         ],
         1
@@ -73058,13 +73273,57 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _vm.results.valid
+    _vm.results.length === 0
       ? _c("div", [
-          _vm._m(1),
-          _vm._v(" "),
-          _c("h2", [_vm._v(_vm._s(_vm.results.message))])
+          _c(
+            "div",
+            { staticStyle: { color: "red" } },
+            [
+              _c("p", [_vm._v(" Make valid entries")]),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { to: { name: "validate" } }
+                },
+                [_vm._v("Go back")]
+              )
+            ],
+            1
+          )
         ])
-      : _c("div", [_c("h2", [_vm._v(_vm._s(_vm.results.message))])])
+      : _c("div", [
+          _vm.results.valid
+            ? _c("div", [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("h2", [_vm._v(_vm._s(_vm.results.message))]),
+                _vm._v(" "),
+                _c("h4", [
+                  _vm._v("you effective price is "),
+                  _c("h1", [_vm._v(_vm._s(_vm.results.price))])
+                ])
+              ])
+            : _c(
+                "div",
+                [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c("h2", [_vm._v(_vm._s(_vm.results.message))]),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { to: { name: "validate" } }
+                    },
+                    [_vm._v("Go back")]
+                  )
+                ],
+                1
+              )
+        ])
   ])
 }
 var staticRenderFns = [
@@ -73079,9 +73338,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticStyle: { color: "red" } }, [
-      _c("p"),
-      _c("h1", [_vm._v("Congrats")]),
-      _c("p")
+      _c("h1", [_vm._v("Congrats")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: { color: "red" } }, [
+      _c("h1", [_vm._v("Sorry!!")])
     ])
   }
 ]
@@ -89262,16 +89527,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ShowCouponDeatilsPage_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ShowCouponDeatilsPage.vue */ "./resources/js/components/ShowCouponDeatilsPage.vue");
 /* harmony import */ var _components_ShowCouponsPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ShowCouponsPage */ "./resources/js/components/ShowCouponsPage.vue");
 /* harmony import */ var _components_couponcreate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/couponcreate */ "./resources/js/components/couponcreate.vue");
-/* harmony import */ var _components_validateEntries__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/validateEntries */ "./resources/js/components/validateEntries.vue");
-/* harmony import */ var _components_validateresult__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/validateresult */ "./resources/js/components/validateresult.vue");
-/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Home */ "./resources/js/components/Home.vue");
-/* harmony import */ var _components_DeleteCoupon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/DeleteCoupon */ "./resources/js/components/DeleteCoupon.vue");
-/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
-/* harmony import */ var bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.css */ "./node_modules/bootstrap/dist/css/bootstrap.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! bootstrap-vue/dist/bootstrap-vue.css */ "./node_modules/bootstrap-vue/dist/bootstrap-vue.css");
-/* harmony import */ var bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _components_EditCouponDetailsPage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/EditCouponDetailsPage */ "./resources/js/components/EditCouponDetailsPage.vue");
+/* harmony import */ var _components_validateEntries__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/validateEntries */ "./resources/js/components/validateEntries.vue");
+/* harmony import */ var _components_validateresult__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/validateresult */ "./resources/js/components/validateresult.vue");
+/* harmony import */ var _components_Home__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Home */ "./resources/js/components/Home.vue");
+/* harmony import */ var _components_DeleteCoupon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/DeleteCoupon */ "./resources/js/components/DeleteCoupon.vue");
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/esm/index.js");
+/* harmony import */ var bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.css */ "./node_modules/bootstrap/dist/css/bootstrap.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_css__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! bootstrap-vue/dist/bootstrap-vue.css */ "./node_modules/bootstrap-vue/dist/bootstrap-vue.css");
+/* harmony import */ var bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(bootstrap_vue_dist_bootstrap_vue_css__WEBPACK_IMPORTED_MODULE_14__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -89290,15 +89557,15 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_2__["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["BootstrapVue"]); // Optionally install the BootstrapVue icon components plugin
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_12__["BootstrapVue"]); // Optionally install the BootstrapVue icon components plugin
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_11__["IconsPlugin"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_12__["IconsPlugin"]);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
   routes: [{
     path: '/',
     name: 'home',
-    component: _components_Home__WEBPACK_IMPORTED_MODULE_9__["default"]
+    component: _components_Home__WEBPACK_IMPORTED_MODULE_10__["default"]
   }, {
     path: '/showcoupons',
     name: 'showcoupons',
@@ -89312,17 +89579,21 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'couponcreate',
     component: _components_couponcreate__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
+    path: '/editCouponDetails/:c_id',
+    name: 'editCoupon',
+    component: _components_EditCouponDetailsPage__WEBPACK_IMPORTED_MODULE_7__["default"]
+  }, {
     path: '/validate',
     name: 'validate',
-    component: _components_validateEntries__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _components_validateEntries__WEBPACK_IMPORTED_MODULE_8__["default"]
   }, {
     path: '/api/couponvalidate/result/:c:p:u',
     name: 'validateresult',
-    component: _components_validateresult__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _components_validateresult__WEBPACK_IMPORTED_MODULE_9__["default"]
   }, {
     path: '/DeleteCoupon',
     name: 'delete',
-    component: _components_DeleteCoupon__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _components_DeleteCoupon__WEBPACK_IMPORTED_MODULE_11__["default"]
   }]
 }); //Vue.component('Welcome', require('./components/Welcome.vue') )
 
@@ -89547,6 +89818,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/EditCouponDetailsPage.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/EditCouponDetailsPage.vue ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _EditCouponDetailsPage_vue_vue_type_template_id_2492f126___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditCouponDetailsPage.vue?vue&type=template&id=2492f126& */ "./resources/js/components/EditCouponDetailsPage.vue?vue&type=template&id=2492f126&");
+/* harmony import */ var _EditCouponDetailsPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditCouponDetailsPage.vue?vue&type=script&lang=js& */ "./resources/js/components/EditCouponDetailsPage.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _EditCouponDetailsPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _EditCouponDetailsPage_vue_vue_type_template_id_2492f126___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _EditCouponDetailsPage_vue_vue_type_template_id_2492f126___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/EditCouponDetailsPage.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/EditCouponDetailsPage.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/EditCouponDetailsPage.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditCouponDetailsPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./EditCouponDetailsPage.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditCouponDetailsPage.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_EditCouponDetailsPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/EditCouponDetailsPage.vue?vue&type=template&id=2492f126&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/EditCouponDetailsPage.vue?vue&type=template&id=2492f126& ***!
+  \******************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditCouponDetailsPage_vue_vue_type_template_id_2492f126___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./EditCouponDetailsPage.vue?vue&type=template&id=2492f126& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditCouponDetailsPage.vue?vue&type=template&id=2492f126&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditCouponDetailsPage_vue_vue_type_template_id_2492f126___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_EditCouponDetailsPage_vue_vue_type_template_id_2492f126___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Header.vue":
 /*!********************************************!*\
   !*** ./resources/js/components/Header.vue ***!
@@ -89666,38 +90006,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Home_vue_vue_type_template_id_f2b6376c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
-
-/***/ }),
-
-/***/ "./resources/js/components/QB.vue":
-/*!****************************************!*\
-  !*** ./resources/js/components/QB.vue ***!
-  \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-component.options.__file = "resources/js/components/QB.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
@@ -90064,8 +90372,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/administrator/Documents/Promotion-System/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/administrator/Documents/Promotion-System/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/charvigupta/Documents/testing/Promotion-System/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/charvigupta/Documents/testing/Promotion-System/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

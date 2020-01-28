@@ -38,7 +38,9 @@ Route::get('/validate', 'AppController@validateinput');
 
 Route::get('/showallproperties','propertiesController@showProperties');
 
-Route::get('/showcoupons','CouponsController@showallcoupons');
+Route::get('/showcoupons','CouponsController@showallcoupon');
+Route::get('/showallcoupons','CouponsController@showallcoupons');
+
 
 //Route::get('/showcoupon','CouponsController@showallcoupons');
 

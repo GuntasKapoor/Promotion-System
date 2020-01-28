@@ -6,6 +6,7 @@ import App from './components/App.vue';
 import ShowCouponDeatilsPage from "./components/ShowCouponDeatilsPage.vue";
 import ShowCouponsPage from "./components/ShowCouponsPage";
 import CouponCreate from "./components/couponcreate";
+import EditCouponDetailsPage from "./components/EditCouponDetailsPage";
 import validateEntries from "./components/validateEntries";
 import validateresult from "./components/validateresult";
 import Home from './components/Home'
@@ -46,6 +47,12 @@ const router = new VueRouter({
             path: '/CouponCreate',
             name: 'couponcreate',
             component: CouponCreate
+        },
+
+        {
+            path: '/editCouponDetails/:c_id',
+            name: 'editCoupon',
+            component: EditCouponDetailsPage
         },
 
         {

@@ -9,8 +9,11 @@
             </tr>
             </thead>
             <tbody>
+            <tr v-if="couponsarr.length == 0">
+                <td><h5> No Coupons to delete.</h5></td>
+            </tr>
 
-            <tr v-for="coup in couponsarr" :key="coup.c_id">
+            <tr v-else v-for="coup in couponsarr" :key="coup.c_id">
                 <td>{{ coup.c_id}}</td>
                 <td>{{ coup.c_name }}</td>
                 <td>
@@ -27,12 +30,12 @@
 </template>
 
 <script>
-    import QB from '/Users/administrator/Documents/Promotion-System/resources/js/components/QB.vue'
+    // import QB from '/Users/charvigupta/Documents/testing/Promotion-System/resources/js/components/QB.vue'
     import axios from 'axios'
 
     export default {
         components: {
-            QB
+            // QB
         },
         data() {
             return  {

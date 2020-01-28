@@ -13,13 +13,14 @@
             </tr>
             </thead>
             <tbody>
-
-            <tr v-for="coupon in results" v-bind:key="coupon.c_id">
+            <tr v-if="results.length == 0">
+                <td><h5> Coupon List is empty.</h5></td>
+            </tr>
+            <tr v-else v-for="coupon in results" v-bind:key="coupon.c_id">
                 <td>{{ coupon.c_id}}</td>
                 <td>{{ coupon.c_name }}</td>
                 <td><router-link :to="{name:'showcoupondetail',params:{c_id :coupon.c_id}}" class="btn btn-primary">View</router-link></td>
-                <!--                <td><router-link :to="{name: 'edit', params: { id: coupon.c_id }}" class="btn btn-primary">Edit</router-link></td>-->
-<!--                <td><button class="btn btn-danger">Delete</button></td>-->
+                <td><router-link :to="{name: 'editCoupon', params: { c_id: coupon.c_id }}" class="btn btn-primary">Edit</router-link></td>
             </tr>
             </tbody>
         </table>
@@ -50,7 +51,7 @@
 
         mounted(){
 
-            let url = "/showcoupons";
+            let url = "/showallcoupons";
             axios.get(url).then(response => {
                 // console.log(response.data);
                 this.results = response.data;
