@@ -1,7 +1,7 @@
 <template>
 
-    <div style="background:#ECECEC; padding:30px; ">
-        <div style="color: red">
+    <div>
+        <div>
 
             <h1 align="center">Edit Coupon Details</h1>
         </div>

@@ -72549,71 +72549,67 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticStyle: { background: "#ECECEC", padding: "30px" } },
-    [
-      _vm._m(0),
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("form", { attrs: { method: "post", action: "/api/editted/" } }, [
+      _c("h4", { attrs: { align: "center" } }, [
+        _vm._v(" Coupon Code: "),
+        _c("input", {
+          attrs: { name: "c_name", type: "text", required: "" },
+          domProps: { value: _vm.results.c_name }
+        })
+      ]),
       _vm._v(" "),
-      _c("form", { attrs: { method: "post", action: "/api/editted/" } }, [
-        _c("h4", { attrs: { align: "center" } }, [
-          _vm._v(" Coupon Code: "),
-          _c("input", {
-            attrs: { name: "c_name", type: "text", required: "" },
-            domProps: { value: _vm.results.c_name }
-          })
-        ]),
-        _vm._v(" "),
-        _c("h4", { attrs: { align: "center" } }, [
-          _vm._v(" Percentage Discount: "),
-          _c("input", {
-            attrs: { name: "c_percentDiscount", type: "number", required: "" },
-            domProps: { value: _vm.results.c_percentDiscount }
-          })
-        ]),
-        _vm._v(" "),
-        _c("h4", { attrs: { align: "center" } }, [
-          _vm._v(" Coupon Validity: "),
-          _c("input", {
-            attrs: { name: "c_validity", type: "date", required: "" },
-            domProps: { value: _vm.results.c_validity }
-          })
-        ]),
-        _vm._v(" "),
-        _c("h4", { attrs: { align: "center" } }, [
-          _vm._v(" Max Discount: "),
-          _c("input", {
-            attrs: { name: "c_maxDiscount", type: "number", required: "" },
-            domProps: { value: _vm.results.c_maxDiscount }
-          })
-        ]),
-        _vm._v(" "),
-        _c("h4", { attrs: { align: "center" } }, [
-          _vm._v(" Activation status: "),
-          _c("input", {
-            attrs: { name: "c_activate", type: "number", required: "" },
-            domProps: { value: _vm.results.c_activate }
-          })
-        ]),
-        _vm._v(" "),
-        _c("h4", { attrs: { align: "center" } }, [
-          _c("input", {
-            attrs: { name: "c_id", type: "hidden", required: "" },
-            domProps: { value: _vm.results.c_id }
-          })
-        ]),
-        _vm._v(" "),
-        _vm._m(1)
-      ])
-    ]
-  )
+      _c("h4", { attrs: { align: "center" } }, [
+        _vm._v(" Percentage Discount: "),
+        _c("input", {
+          attrs: { name: "c_percentDiscount", type: "number", required: "" },
+          domProps: { value: _vm.results.c_percentDiscount }
+        })
+      ]),
+      _vm._v(" "),
+      _c("h4", { attrs: { align: "center" } }, [
+        _vm._v(" Coupon Validity: "),
+        _c("input", {
+          attrs: { name: "c_validity", type: "date", required: "" },
+          domProps: { value: _vm.results.c_validity }
+        })
+      ]),
+      _vm._v(" "),
+      _c("h4", { attrs: { align: "center" } }, [
+        _vm._v(" Max Discount: "),
+        _c("input", {
+          attrs: { name: "c_maxDiscount", type: "number", required: "" },
+          domProps: { value: _vm.results.c_maxDiscount }
+        })
+      ]),
+      _vm._v(" "),
+      _c("h4", { attrs: { align: "center" } }, [
+        _vm._v(" Activation status: "),
+        _c("input", {
+          attrs: { name: "c_activate", type: "number", required: "" },
+          domProps: { value: _vm.results.c_activate }
+        })
+      ]),
+      _vm._v(" "),
+      _c("h4", { attrs: { align: "center" } }, [
+        _c("input", {
+          attrs: { name: "c_id", type: "hidden", required: "" },
+          domProps: { value: _vm.results.c_id }
+        })
+      ]),
+      _vm._v(" "),
+      _vm._m(1)
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticStyle: { color: "red" } }, [
+    return _c("div", [
       _c("h1", { attrs: { align: "center" } }, [_vm._v("Edit Coupon Details")])
     ])
   },
