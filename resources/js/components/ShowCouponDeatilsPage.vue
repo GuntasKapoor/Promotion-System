@@ -24,14 +24,6 @@
                 <th>{{results.c_maxDiscount}}</th>
                 <th>{{results.c_activate}}</th>
 
-<!--            <th v-for="coupon in results" >-->
-<!--&lt;!&ndash;                v-bind:key="coupon.c_id"&ndash;&gt;-->
-<!--                <td>{{ coupon}}</td>-->
-<!--&lt;!&ndash;                <td>{{ coupon.c_name }}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                <td>{{ coupon.id }}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                <td><router-link :to="{name: 'edit', params: { id: coupon.c_id }}" class="btn btn-primary">Edit</router-link></td>&ndash;&gt;-->
-<!--&lt;!&ndash;                <td><button class="btn btn-danger">Delete</button></td>&ndash;&gt;-->
-<!--            </th>-->
             </tr>
             </tbody>
         </table>

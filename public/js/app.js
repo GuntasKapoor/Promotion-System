@@ -2153,6 +2153,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {}
 });
@@ -2171,14 +2177,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Header.vue */ "./resources/js/components/Header.vue");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2294,8 +2292,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-// import Header from '/Users/administrator/Documents/Promotion-System/resources/js/components/Header.vue'
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2316,28 +2312,9 @@ __webpack_require__.r(__webpack_exports__);
 
     var url = "/showallcoupons";
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
-      // console.log(response.data);
       _this.results = response.data;
     });
-  },
-  components: {} // Header
-  // beforeMount() {
-  //     axios.get("http://127.0.0.1:8001/api/showcoupons").then(response => (this.data = response.data))
-  //
-  // },
-  // methods:{
-  //     fetchCoupons(url){
-  //         let vm = this;
-  //         url = url || 'http://127.0.0.1:8001/api/showcoupons';
-  //         fetch(url)
-  //         .then(res => {
-  //             this.results = res.data;
-  //
-  //         })
-  //     }
-  //
-  // }
-
+  }
 });
 
 /***/ }),
@@ -2351,6 +2328,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -2438,26 +2417,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2471,7 +2430,6 @@ __webpack_require__.r(__webpack_exports__);
 
     var url = "/api/couponvalidate/result";
     var params = this.$route.params;
-    console.log(params);
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url, {
       params: params
     }).then(function (response) {
@@ -72731,36 +72689,19 @@ var render = function() {
       _c(
         "b-card",
         [
-          _c(
-            "b-media",
-            {
-              scopedSlots: _vm._u([
-                {
-                  key: "aside",
-                  fn: function() {
-                    return undefined
-                  },
-                  proxy: true
-                }
-              ])
-            },
-            [
+          _c("b-media", [
+            _c("div", { staticClass: "jumbotron" }, [
+              _c("h1", { staticClass: "display-4" }, [_vm._v("About Project")]),
               _vm._v(" "),
-              _c("h1", { staticClass: "mt-0" }, [_vm._v("About Project")]),
-              _vm._v(" "),
-              _c("p", [
+              _c("p", { staticClass: "lead" }, [
                 _vm._v(
-                  "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit.\n        Sed voluptatum tenetur nostrum eveniet blanditiis, ea molestiae nisi saepe nemo impedit culpa quos,\n        quasi reiciendis sint ipsum. Cum reiciendis consequuntur laboriosam.\n      "
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "\n        Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque\n        penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n      "
+                  " This application is a one CRUD operation to manage  promotion coupons - Create/Read/Update/Delete.\n\n                You can also check the validity of coupons by applying them to different listed properties\n\n                Note: A coupon is created with an activation status 1 (ACTIVE). To deactivate it, update the activation status by editing the coupon.\n\n                The purpose of this project is to provide Promotions (Coupons) functionality. One can create coupons with different constraints like maximum discount, validity, coupons for some particular properties etc. There is page to see the list of coupons. There is functionality to update coupon and change its constraints.\n\n\n                Laravel 3 + Vue.js + Axios - Simple CRUD Application\n                Simple project demonstrating how Laravel works with Vue.js.\n                Application is based on MVC architecture and has CRUD functionalities"
                 )
               ])
-            ]
-          )
+            ]),
+            _vm._v(" "),
+            _c("p")
+          ])
         ],
         1
       )
@@ -72876,7 +72817,7 @@ var render = function() {
       _c(
         "tbody",
         [
-          _vm.results.length == 0
+          _vm.results.length === 0
             ? _c("tr", [_vm._m(2)])
             : _vm._l(_vm.results, function(coupon) {
                 return _c("tr", { key: coupon.c_id }, [
@@ -72936,11 +72877,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("p"),
-      _c("h1", [_vm._v("List Of All Coupons")]),
-      _c("p")
-    ])
+    return _c("div", [_c("h1", [_vm._v("List Of All Coupons")])])
   },
   function() {
     var _vm = this
@@ -73140,102 +73077,104 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("form", [
-      _c("h4", { attrs: { align: "center" } }, [
-        _vm._v(" Coupon id: "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.coupon_id,
-              expression: "coupon_id"
-            }
-          ],
-          attrs: { type: "number", required: "" },
-          domProps: { value: _vm.coupon_id },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+      _c("div", { staticClass: "form-group" }, [
+        _c("h4", { attrs: { align: "center" } }, [
+          _vm._v(" Coupon id: "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.coupon_id,
+                expression: "coupon_id"
               }
-              _vm.coupon_id = $event.target.value
-            }
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("h4", { attrs: { align: "center" } }, [
-        _vm._v(" Property id: "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.property_id,
-              expression: "property_id"
-            }
-          ],
-          attrs: { type: "number", required: "" },
-          domProps: { value: _vm.property_id },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+            ],
+            attrs: { type: "number", required: "" },
+            domProps: { value: _vm.coupon_id },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.coupon_id = $event.target.value
               }
-              _vm.property_id = $event.target.value
             }
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("h4", { attrs: { align: "center" } }, [
-        _vm._v(" User id: "),
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.user_id,
-              expression: "user_id"
-            }
-          ],
-          attrs: { type: "number", required: "" },
-          domProps: { value: _vm.user_id },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+          })
+        ]),
+        _vm._v(" "),
+        _c("h4", { attrs: { align: "center" } }, [
+          _vm._v(" Property id: "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.property_id,
+                expression: "property_id"
               }
-              _vm.user_id = $event.target.value
+            ],
+            attrs: { type: "number", required: "" },
+            domProps: { value: _vm.property_id },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.property_id = $event.target.value
+              }
             }
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c(
-        "h4",
-        { attrs: { align: "center" } },
-        [
-          _c(
-            "router-link",
-            {
-              staticClass: "btn btn-primary",
-              attrs: {
-                to: {
-                  name: "validateresult",
-                  params: {
-                    c: _vm.coupon_id,
-                    p: _vm.property_id,
-                    u: _vm.user_id
+          })
+        ]),
+        _vm._v(" "),
+        _c("h4", { attrs: { align: "center" } }, [
+          _vm._v(" User id: "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.user_id,
+                expression: "user_id"
+              }
+            ],
+            attrs: { type: "number", required: "" },
+            domProps: { value: _vm.user_id },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.user_id = $event.target.value
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "h4",
+          { attrs: { align: "center" } },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass: "btn btn-primary",
+                attrs: {
+                  to: {
+                    name: "validateresult",
+                    params: {
+                      c: _vm.coupon_id,
+                      p: _vm.property_id,
+                      u: _vm.user_id
+                    }
                   }
                 }
-              }
-            },
-            [_vm._v("Apply")]
-          )
-        ],
-        1
-      )
+              },
+              [_vm._v("Apply")]
+            )
+          ],
+          1
+        )
+      ])
     ])
   ])
 }

@@ -6,12 +6,14 @@
         </div>
 
         <form>
+            <div class = "form-group">
             <h4 align="center"> Coupon id: <input v-model="coupon_id" type="number" required></h4>
             <h4 align="center"> Property id: <input v-model="property_id" type="number" required></h4>
             <h4 align="center"> User id: <input v-model="user_id" type="number" required></h4>
             <h4 align="center">
                 <router-link :to="{name:'validateresult',params:{c:coupon_id,p:property_id,u:user_id}}" class="btn btn-primary">Apply</router-link>
             </h4>
+            </div>
         </form>
     </div>
 </template>
