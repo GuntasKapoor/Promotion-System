@@ -27,7 +27,7 @@
 </template>
 
 <script>
-    import QB from '/Users/administrator/Documents/Promotion-System/resources/js/components/QB.vue'
+    import QB from '/Users/Samarth/Promotion-System/resources/js/components/QB.vue'
     import axios from 'axios'
 
     export default {

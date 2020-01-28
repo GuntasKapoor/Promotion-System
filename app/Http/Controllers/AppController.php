@@ -35,13 +35,17 @@ class AppController extends Controller
         $cc=$r->input('c');
         $pp=$r->input('p');
         $uu=$r->input('u');
-        
-        $prop=properties::where('p_id',$pp)->first();
+        $response=[];
+        if(!($cc&&$pp&&$uu)){
+            return $response;
+        }
+
+        $pr=properties::where('p_id',$pp)->first();
 //        $prop = DB::table('properties')->select('p_price')->where('p_id', $pp)->g();
 //        $pr=properties::find($pp)->first();
 //        $prop=$prop->p_price;
 //        $prop->p_price;
-        $prop=$prop->p_price;
+        $prop=$pr->p_price;
         $coupon=coupons::where('c_id',$cc)->count();
 
         if(!$coupon){
@@ -80,7 +84,7 @@ class AppController extends Controller
                             $dis=$coupon->c_maxDiscount;
                         }
                         $pr=$prop->p_price-$dis;
-                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.', 'price'=>$prop ];
+                        $response = ['valid' => true, 'message' => 'Coupon applied successfully!.', 'price'=>$pr ];
 
                     }
 

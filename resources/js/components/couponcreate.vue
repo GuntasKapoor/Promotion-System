@@ -18,7 +18,7 @@
                     <input type="checkbox" name="c_property[]" value=5> property5<br>
                     <input type="checkbox" name="c_property[]" value=6> property6<br>
                 </h4>
-                <h4 align="center"><input type="submit" align="center" onclick="alert('Coupon created successfully')"></h4>
+                <h4 align="center"><input type="submit" align="center" ></h4>
             </form>
     </div>
 </template>
@@ -26,6 +26,9 @@
 
 
 <script>
+
+
+
     // import Header from '/Users/administrator/Documents/Promotion-System/resources/js/components/Header.vue'
 
     export default{

@@ -41,7 +41,7 @@
 
 
 <script>
-    import Header from '/Users/administrator/Documents/Promotion-System/resources/js/components/Header.vue'
+    import Header from '/Users/Samarth/Promotion-System/resources/js/components/Header.vue'
 
     import axios from 'axios'
     export default {
