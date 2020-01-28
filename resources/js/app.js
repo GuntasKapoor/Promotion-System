@@ -78,7 +78,6 @@ const router = new VueRouter({
     ],
 });
 
-//Vue.component('Welcome', require('./components/Welcome.vue') )
 
 const app = new Vue({
     el: '#app',

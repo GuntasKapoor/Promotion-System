@@ -39,6 +39,14 @@ class CouponsController extends Controller{
         return view('landing');
     }
 
+    public function showSelectedProperties(Request $request)
+    {
+        $showSelectedProperties = couponProperty::where('c_id', $request->input('c_id'))->get();
+
+        return $showSelectedProperties;
+    }
+
+
     public function destroy($id)
     {
         $coupon = coupons::where('c_id', $id)->delete();

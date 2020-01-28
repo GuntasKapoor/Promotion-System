@@ -2061,6 +2061,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+//
+//
 //
 //
 //
@@ -2106,7 +2116,9 @@ __webpack_require__.r(__webpack_exports__);
         c_maxDiscount: '',
         c_cashbackType: '',
         c_paymentMethod: ''
-      }
+      },
+      selectedProperties: [],
+      properties: [false, false, false, false, false, false]
     };
   },
   mounted: function mounted() {
@@ -2114,11 +2126,26 @@ __webpack_require__.r(__webpack_exports__);
 
     var url = "/fetchcoupondetails";
     var params = this.$route.params;
+    var url2 = "/fetchSelectedProperties"; // const {params2} = this.$route;
+
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url, {
       params: params
     }).then(function (response) {
-      console.log(response.data);
+      console.log('Response 1: ', response.data);
       _this.results = response.data;
+    });
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url2, {
+      params: params
+    }).then(function (response) {
+      console.log('Response 2: ', response.data); // this.selectedProperties = response.data;
+
+      response.data.forEach(function (selectedProperty) {
+        var newProperties = _toConsumableArray(_this.properties);
+
+        newProperties[selectedProperty.p_id - 1] = true;
+        _this.properties = newProperties;
+      });
+      console.log('Selected properties: ', _this.properties); // console.log(this.selectedProperties[1].p_id);
     });
   }
 });
@@ -2134,6 +2161,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2214,15 +2247,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2233,7 +2257,6 @@ __webpack_require__.r(__webpack_exports__);
       coupon: {
         c_id: '',
         c_name: '',
-        // c_minPrice: '',
         c_percentDiscount: '',
         c_validity: '',
         c_maxDiscount: '',
@@ -72601,7 +72624,52 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c("h4", { attrs: { align: "center" } }, [
+        _vm._v(" select properties"),
+        _c("br"),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "checkbox", name: "c_property[]", value: "1" },
+          domProps: { checked: _vm.properties[0] == true }
+        }),
+        _vm._v(" property1"),
+        _c("br"),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "checkbox", name: "c_property[]", value: "2" },
+          domProps: { checked: _vm.properties[1] == true }
+        }),
+        _vm._v(" property2"),
+        _c("br"),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "checkbox", name: "c_property[]", value: "3" },
+          domProps: { checked: _vm.properties[2] == true }
+        }),
+        _vm._v(" property3"),
+        _c("br"),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "checkbox", name: "c_property[]", value: "4" },
+          domProps: { checked: _vm.properties[3] == true }
+        }),
+        _vm._v(" property4"),
+        _c("br"),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "checkbox", name: "c_property[]", value: "5" },
+          domProps: { checked: _vm.properties[4] == true }
+        }),
+        _vm._v(" property5"),
+        _c("br"),
+        _vm._v(" "),
+        _c("input", {
+          attrs: { type: "checkbox", name: "c_property[]", value: "6" },
+          domProps: { checked: _vm.properties[5] == true }
+        }),
+        _vm._v(" property6"),
+        _c("br")
+      ]),
       _vm._v(" "),
       _c("h4", { attrs: { align: "center" } }, [
         _c("input", {
@@ -72610,7 +72678,7 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _vm._m(2)
+      _vm._m(1)
     ])
   ])
 }
@@ -72621,51 +72689,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", [
       _c("h1", { attrs: { align: "center" } }, [_vm._v("Edit Coupon Details")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h4", { attrs: { align: "center" } }, [
-      _vm._v(" select properties"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "checkbox", name: "c_property[]", value: "1" }
-      }),
-      _vm._v(" property1"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "checkbox", name: "c_property[]", value: "2" }
-      }),
-      _vm._v(" property2"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "checkbox", name: "c_property[]", value: "3" }
-      }),
-      _vm._v(" property3"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "checkbox", name: "c_property[]", value: "4" }
-      }),
-      _vm._v(" property4"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "checkbox", name: "c_property[]", value: "5" }
-      }),
-      _vm._v(" property5"),
-      _c("br"),
-      _vm._v(" "),
-      _c("input", {
-        attrs: { type: "checkbox", name: "c_property[]", value: "6" }
-      }),
-      _vm._v(" property6"),
-      _c("br")
     ])
   },
   function() {
@@ -72805,13 +72828,19 @@ var render = function() {
               _vm._v(" "),
               _c("p", [
                 _vm._v(
-                  "\n        Lorem ipsum dolor sit amet consectetur adipisicing elit.\n        Sed voluptatum tenetur nostrum eveniet blanditiis, ea molestiae nisi saepe nemo impedit culpa quos,\n        quasi reiciendis sint ipsum. Cum reiciendis consequuntur laboriosam.\n      "
+                  " This application is a one CRUD operation to manage  promotion coupons - Create/Read/Update/Delete.\n\n            You can also check the validity of coupons by applying them to different listed properties\n        "
                 )
               ]),
               _vm._v(" "),
               _c("p", [
                 _vm._v(
-                  "\n        Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque\n        penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n      "
+                  "\n            Note: A coupon is created with an activation status 1 (ACTIVE). To deactivate it, update the activation status by editing the coupon.\n\n\n        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n\n            Laravel 3 + Vue.js + Axios - Simple CRUD Application\n            Simple project demonstrating how Laravel works with Vue.js.\n            Application is based on MVC architecture and has CRUD functionalities"
                 )
               ])
             ]
@@ -89650,8 +89679,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
     name: 'delete',
     component: _components_DeleteCoupon__WEBPACK_IMPORTED_MODULE_11__["default"]
   }]
-}); //Vue.component('Welcome', require('./components/Welcome.vue') )
-
+});
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   router: router,
@@ -90411,8 +90439,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/Samarth/Promotion-System/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/Samarth/Promotion-System/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/charvigupta/Documents/testing/Promotion-System/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/charvigupta/Documents/testing/Promotion-System/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

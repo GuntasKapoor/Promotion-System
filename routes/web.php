@@ -45,7 +45,8 @@ Route::get('/showallcoupons','CouponsController@showallcoupons');
 //Route::get('/showcoupon','CouponsController@showallcoupons');
 
 Route::get('/fetchcoupondetails','CouponsController@showdetails');
-//Auth::routes();
+Route::get('/fetchSelectedProperties', 'CouponsController@showSelectedProperties');
+
 Route::get('/showcoupondetails/{id}', 'CouponsController@showdetail');
 
 Route::delete('/coupon/{c_id}', 'CouponsController@destroy');

@@ -8,15 +8,21 @@
       </template>
 
       <h1 class="mt-0">About Project</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Sed voluptatum tenetur nostrum eveniet blanditiis, ea molestiae nisi saepe nemo impedit culpa quos,
-        quasi reiciendis sint ipsum. Cum reiciendis consequuntur laboriosam.
-      </p>
-      <p>
-        Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque
-        penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </p>
+        <p> This application is a one CRUD operation to manage  promotion coupons - Create/Read/Update/Delete.
+
+            You can also check the validity of coupons by applying them to different listed properties
+        </p>
+        <p>
+            Note: A coupon is created with an activation status 1 (ACTIVE). To deactivate it, update the activation status by editing the coupon.
+
+
+        </p>
+
+        <p>
+
+            Laravel 3 + Vue.js + Axios - Simple CRUD Application
+            Simple project demonstrating how Laravel works with Vue.js.
+            Application is based on MVC architecture and has CRUD functionalities</p>
     </b-media>
   </b-card>
 </div>
